@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* Fonts from Google Fonts - more at https://fonts.google.com */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+
+body {
+  background-color: rgba(96, 54, 192, 0) ;
+  font-family: 'Space Mono', monospace;
+  padding: 5px 25px;
+  font-size: 18px;
+  margin: 0;
+  color: #261e0f;
+  background: url("BezObaluPic2.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: right bottom;
+}
+
+ul {
+  list-style-type: square;
+}
+
+
+h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: 32px;
+}
+
+button {
+  background-color: rgba(95, 67, 14, 0.47);
+  border: 3px solid #261e0f;
+  color: #261e0f;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight:bold;
+}
+
+
+button:hover {
+  background-color: #261e0f;
+  color: white;}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.dropdown-content {
+  display: none;
+  font-size: 12px;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
