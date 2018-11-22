@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 Ahoj, delame druhy pokus. 
 dhsaeihiaefh
+=======
+pripisuju nad
+Ahoj, delame druhy pokus. 
+>>>>>>> d5fb9d0459ae77c0c4e7f7b61dd3916525458895
