@@ -33,8 +33,7 @@ tmp/
 *~.nib
 local.properties
 .settings/
-.classpath
-.project
+
 
 
 # Locally stored "Eclipse launch configurations"
