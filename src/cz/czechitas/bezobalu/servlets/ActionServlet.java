@@ -14,7 +14,6 @@ import cz.czechitas.bezobalu.controllers.FiltrPController;
 import cz.czechitas.bezobalu.controllers.OdeslatController;
 import cz.czechitas.bezobalu.controllers.SpocitejController;
 
-
 /**
  * Servlet implementation class ActionServlet
  */
@@ -40,11 +39,10 @@ public class ActionServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//tohle jen fiktivni naplneni listu pro Alcu
+		//tohle jen fiktivni naplneni listu pro Alcu - pak vymazat TODO
 		ArrayList<Kategorie> vyfiltrovaneKategorie = new ArrayList<Kategorie>();
 		Kategorie lusteniny = new Kategorie(1, "lusteniny");
 		Kategorie kosmetika = new Kategorie(2, "kosmetika ");
-		
 		
 		vyfiltrovaneKategorie.add(lusteniny);
 		vyfiltrovaneKategorie.add(kosmetika);
@@ -53,7 +51,7 @@ public class ActionServlet extends HttpServlet {
 		
 		if (action.equals("vyfiltrujKaterogie")) {
 			filtrKController.handle(request, response);
-			request.setAttribute("vyfiltrovaneKategorie", vyfiltrovaneKategorie);
+			request.setAttribute("vyfiltrovaneKategorie", vyfiltrovaneKategorie); //TODO vymazat - je to Alci
 		} else if (action.equals("vyfiltrujProdukty")) {
 			filtrPController.handle(request, response);
 		} else if (action.equals("spocitej")) {
