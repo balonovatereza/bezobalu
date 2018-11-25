@@ -1,25 +1,31 @@
 package cz.czechitas.bezobalu.bean;
 
 public class Kategorie {
-	private int id;
+	private int idKategorie;
 	private String nazev;
-	public int getId() {
-		return id;
+	
+	public int getIdKategorie() {
+		return idKategorie;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public void setIdKategorie(int idKategorie) {
+		this.idKategorie = idKategorie;
 	}
+
 	public String getNazev() {
 		return nazev;
 	}
+
 	public void setNazev(String nazev) {
 		this.nazev = nazev;
 	}
-	public Kategorie(int id, String nazev) {
+
+	public Kategorie(int idKategorie, String nazev) {
 		super();
-		this.id = id;
+		this.idKategorie = idKategorie;
 		this.nazev = nazev;
 	}
+
 	public Kategorie () {
 		
 	}
