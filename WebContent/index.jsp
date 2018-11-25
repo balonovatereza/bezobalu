@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Made with Thimble</title>
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>Welcome to BezObalu</h1>
@@ -22,12 +22,11 @@
       <li>Můžete si vybrat mezi prodejnami v <strong>Ostravě</strong> a <strong>Olomouci</strong></li>
     </ul>
     
-    <button>
-    <a href="kalkulace.jsp?idMesta=1">Ostrava</a>
-    </button>
-    <button>
-    <a href="kalkulace.jsp?idMesta=2">Olomouc</a>
-    </button>
+    
+    <a class="tlacitko" href="kalkulace?idMesta=1">Ostrava</a>
+    
+    <a class="tlacitko" href="kalkulace?idMesta=2">Olomouc</a>
+    
     
     <div></div>
   </body>

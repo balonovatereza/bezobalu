@@ -10,12 +10,16 @@ body {
   font-size: 18px;
   margin: 0;
   color: #261e0f;
-  background: url("BezObaluPic2.jpg");
+  background: url(Fotky/BezObaluPic2.jpg);
   background-repeat:no-repeat;
   background-size: cover;
   background-position: right bottom;
+  height: 100%;
+  background-attachment: fixed;
 }
 
+html {
+	height: 100%;}
 ul {
   list-style-type: square;
 }
@@ -26,7 +30,7 @@ h1 {
   font-size: 32px;
 }
 
-button {
+button, .tlacitko {
   background-color: rgba(95, 67, 14, 0.47);
   border: 3px solid #261e0f;
   color: #261e0f;
@@ -44,12 +48,12 @@ button {
 }
 
 
-button:hover {
+button:hover, .tlacitko:hover {
   background-color: #261e0f;
   color: white;}
 
-button:active {
-  background-color: #3e8e41;
+button:hover, .tlacitko:hover {
+  background-color: #261e0f;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
