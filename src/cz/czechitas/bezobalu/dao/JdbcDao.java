@@ -20,6 +20,8 @@ public class JdbcDao {
 	private static final String VYFILTRUJKATEGORIE = "SELECT DISTINCT k.* FROM kategorie k JOIN produkt p ON p.idKategorie = k.id JOIN spojovacitabulka st ON p.id = st.idproduktu WHERE idmesta = ? ORDER BY k.nazev";
 	private static final String NAJDICENU = "SELECT cena FROM produkt p WHERE p.id = ?";
 	private static final String VRATMESTA = "SELECT * FROM mesto;";
+	private static final String VRATPRODUKT = "SELECT p.nazev FROM produkt p WHERE p.id = ?";
+	private static final String VRATKATEGORII = "SELECT k.nazev FROM kategorie k WHERE k.id = ?";
 
 	private DataSource getDataSource() {
 		try {
@@ -95,7 +97,7 @@ public class JdbcDao {
 		DataSource ds = getDataSource();
 		try (Connection con = ds.getConnection(); PreparedStatement stmt = con.prepareStatement(VRATMESTA)) {
 			ResultSet rs = stmt.executeQuery();
-			while (rs.next()) { 
+			while (rs.next()) {
 				Mesto mesto = new Mesto();
 				mesto.setIdMesta(rs.getInt("id"));
 				mesto.setNazev(rs.getString("nazev"));
@@ -108,4 +110,37 @@ public class JdbcDao {
 		return ret;
 	}
 
+	public Produkt vratProdukt(int idProduktu) {
+		Produkt produkt = null;
+		DataSource ds = getDataSource();
+		try (Connection con = ds.getConnection(); PreparedStatement stmt = con.prepareStatement(VRATPRODUKT)) {
+			stmt.setInt(1, idProduktu);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				produkt = new Produkt();
+				produkt.setNazev(rs.getString("nazev"));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return produkt;
+	}
+
+	public Kategorie vratKategorii(int idKategorie) {
+		Kategorie kategorie = null;
+		DataSource ds = getDataSource();
+		try (Connection con = ds.getConnection(); PreparedStatement stmt = con.prepareStatement(VRATKATEGORII)) {
+			stmt.setInt(1, idKategorie);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				kategorie = new Kategorie();
+				kategorie.setNazev(rs.getString("nazev"));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return kategorie;
+	}
 }
