@@ -17,8 +17,7 @@ public class FiltrKController {
 		
 		int idMesta =  Integer.parseInt(request.getParameter("idMesta"));
 	
-		
-		request.setAttribute("vyfiltrovaneKategorie", jdbcDao.filtrujKategorie(idMesta));
+		request.setAttribute("vyfiltrovaneKategorie", jdbcDao.vyfiltrujKategorie(idMesta));
 	}
 	
 }
