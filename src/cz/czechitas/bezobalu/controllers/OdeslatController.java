@@ -16,10 +16,10 @@ public class OdeslatController {
 		System.out.println("tento controller je OdeslatController");
 		  
 			      // Recipient's email ID needs to be mentioned.
-			      String to = "abcd@gmail.com";
+			      String to = "elichnovska@gmail.com";
 
 			      // Sender's email ID needs to be mentioned
-			      String from = "web@gmail.com";
+			      String from = "bezobalu25@gmail.com";
 
 			      // Assuming you are sending email from localhost
 			      String host = "localhost";
@@ -28,7 +28,7 @@ public class OdeslatController {
 			      Properties properties = System.getProperties();
 
 			      // Setup mail server
-			      properties.setProperty("mail.smtp.host", host);
+			      properties.setProperty("smtp.google.com", host);
 
 			      // Get the default Session object.
 			      Session session = Session.getDefaultInstance(properties);

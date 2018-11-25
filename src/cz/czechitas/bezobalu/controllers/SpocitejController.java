@@ -25,10 +25,13 @@ public class SpocitejController {
 		request.setAttribute("vypocet", vypocet);
 	}
 
-	public ArrayList<String> vypis() {
+	public ArrayList<String> vypis(HttpServletRequest request, HttpServletResponse response) {
 		ArrayList<String> seznamVypoctu = new ArrayList<String>();
 		String radek = "";
-
+		idProduktu = Integer.parseInt(request.getParameter("idProduktu"));
+		gramy = Integer.parseInt(request.getParameter("gramy"));
+		radek = idProduktu+" "+gramy+" "+vypocet;
+		seznamVypoctu.add(radek);
 		return seznamVypoctu;
 	}
 	// request.setAttribute("empList", fileDao.load());

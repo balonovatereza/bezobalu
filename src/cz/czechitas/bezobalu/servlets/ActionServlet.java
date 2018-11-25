@@ -14,6 +14,8 @@ import cz.czechitas.bezobalu.controllers.FiltrKController;
 import cz.czechitas.bezobalu.controllers.FiltrPController;
 import cz.czechitas.bezobalu.controllers.OdeslatController;
 import cz.czechitas.bezobalu.controllers.SpocitejController;
+import cz.czechitas.bezobalu.controllers.ZobrazKController;
+import cz.czechitas.bezobalu.controllers.ZobrazPController;
 
 /**
  * Servlet implementation class ActionServlet
@@ -23,7 +25,9 @@ public class ActionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private FiltrKController filtrKController = new FiltrKController();
+	private ZobrazKController zobrazKController = new ZobrazKController();
 	private FiltrPController filtrPController = new FiltrPController();
+	private ZobrazPController zobrazPController = new ZobrazPController();
 	private SpocitejController spocitejController = new SpocitejController();
 	private OdeslatController odeslatController = new OdeslatController();
 	
@@ -50,13 +54,18 @@ public class ActionServlet extends HttpServlet {
 		
 		String action = request.getParameter("action");
 		
-		
-		if (action.equals("vyfiltrujKaterogie")) {
-			filtrKController.handle(request, response);
+		if (action == null) {
+			filtrKController.handle(request, response); //vraci list kategorii
+		} else if (action.equals("zobrazKategorie")) {
+			zobrazKController.zobrazKategorii(request, response); //vracet jednu
+			
 		} else if (action.equals("vyfiltrujProdukty")) {
-			filtrPController.handle(request, response);
+			filtrPController.handle(request, response); //vraci list produktu
+		} else if (action.equals("zobrazProdukty")) {
+			zobrazPController.zobrazProdukt(request, response); //vraci 1 produkt
 		} else if (action.equals("spocitej")) {
-			spocitejController.handle(request, response);
+			spocitejController.handle(request, response); //vraci jeden aktualni vypocet
+			spocitejController.vypis(request, response); //vraci seznam vypoctu aktualizovany o 1 vypocet
 		} else if (action.equals("odeslat")) {
 			 odeslatController.handle(request, response);
 		}
