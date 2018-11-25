@@ -26,7 +26,7 @@
     <a href="kalkulace.jsp?idMesta=1">Ostrava</a>
     </button>
     <button>
-    <a href="kalkulace.jsp?idmMesta=2">Olomouc</a>
+    <a href="kalkulace.jsp?idMesta=2">Olomouc</a>
     </button>
     
     <div></div>
