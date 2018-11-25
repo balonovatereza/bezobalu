@@ -21,7 +21,7 @@ public class FiltrKController {
 		ArrayList<Kategorie> vyfiltrovaneKategorie = new ArrayList<Kategorie>();
 		
 		for (Kategorie kategorie:  vyfiltrovaneKategorie) {
-			System.out.println(kategorie.getId() + kategorie.getNazev());
+			System.out.println(kategorie.getIdKategorie() + kategorie.getNazev());
 		}
 		
 		request.setAttribute("vyfiltrovaneKategorie", jdbcDao.vyfiltrujKategorie(idMesta));

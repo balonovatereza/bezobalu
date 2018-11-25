@@ -29,7 +29,7 @@ public class JdbcDao {
 		return null;
 	}
 
-	public ArrayList<Produkt> filtrujProdukty(int idMesta, int idKategorie) {
+	public ArrayList<Produkt> vyfiltrujProdukty(int idMesta, int idKategorie) {
 
 		ArrayList<Produkt> ret = new ArrayList<Produkt>();
 		DataSource ds = getDataSource();
@@ -51,7 +51,7 @@ public class JdbcDao {
 		return ret;
 	}
 
-	public ArrayList<Kategorie> filtrujKategorie(int idMesta) {
+	public ArrayList<Kategorie> vyfiltrujKategorie(int idMesta) {
 
 		ArrayList<Kategorie> ret = new ArrayList<Kategorie>();
 		DataSource ds = getDataSource();
