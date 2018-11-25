@@ -21,4 +21,8 @@ public Mesto(int idMesta, String nazev) {
 	this.idMesta = idMesta;
 	this.nazev = nazev;
 }
+
+public Mesto() {
+	
+}
 }
