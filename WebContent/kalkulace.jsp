@@ -15,7 +15,7 @@
       		<ul>
       		<li><a href="#">Caj</a></li>
       		</ul>
-      <option value="Luštěniny">Luštěniny</option>
+      <option value="idKategorie"><%=getNazevKategorie()%></option>
       <option value="Mouky, krupice, kaše">Mouky, krupice, kaše</option>
       <option value="Obiloviny a výrobky z nich">Obiloviny a výrobky z nich</option>
       <option value="Ochucovadla">Ochucovadla</option>
