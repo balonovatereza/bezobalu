@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-<Resource name="jdbc/bezobaluCloudDB" auth="Container"
-    type="javax.sql.DataSource"
-    driverClassName="com.mysql.cj.jdbc.Driver"
-    url="jdbc:mysql://168.63.22.235:3306/bezobalu?serverTimezone=UTC"
-    username="bezobalu"
-    password="erhudf7y23r"
-    maxTotal="10" maxIdle="2" maxWaitMillis="10000"/>
-    </Context>
+    <ResourceLink global="bezobaluResource"
+                 name="bezobaluResource"
+                 type="javax.sql.DataSource"/>
+</Context>
