@@ -1,5 +1,7 @@
 package cz.czechitas.bezobalu.controllers;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,10 +16,15 @@ public class FiltrKController {
 		System.out.println("tento controller je FiltrKController");
 		
 		int idMesta =  Integer.parseInt(request.getParameter("idMesta"));
-				
-		//jdbcDao.vyfiltrujKategorie(idMesta); 
 		
-		//request.setAttribute("empList", fileDao.load());
+		
+		ArrayList<Kategorie> vyfiltrovaneKategorie = new ArrayList<Kategorie>();
+		
+		for (Kategorie kategorie:  vyfiltrovaneKategorie) {
+			System.out.println(kategorie.getId() + kategorie.getNazev());
+		}
+		
+		request.setAttribute("vyfiltrovaneKategorie", jdbcDao.vyfiltrujKategorie(idMesta));
 	}
 	
 }

@@ -9,12 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cz.czechitas.bezobalu.controllers.FiltrKController;
+
 /**
  * Servlet implementation class IndexServlet
  */
-@WebServlet("/IndexServlet")
+@WebServlet("/index")
 public class IndexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private FiltrKController filtrKController = new FiltrKController();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -38,9 +42,9 @@ public class IndexServlet extends HttpServlet {
 		String action = request.getParameter("action");
 		
 		if (action.equals("vyfiltrujKaterogie")) {
+			//filtrKController.handle(request, response);
 			request.setAttribute("vyfiltrovaneKategorie", vyfiltrovaneKategorie); //TODO vymazat - je to Alci
 		}
-		
 		
 		getServletConfig().getServletContext().getRequestDispatcher("/kalkulace.jsp").forward(request, response);
 	}

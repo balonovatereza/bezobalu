@@ -17,12 +17,10 @@ import cz.czechitas.bezobalu.controllers.SpocitejController;
 /**
  * Servlet implementation class ActionServlet
  */
-@WebServlet("/action")
+@WebServlet("/kalkulace")
 public class ActionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final int Kategorie = 0; //TODO tohle potom vymazat nakonci
 	
-	private FiltrKController filtrKController = new FiltrKController();
 	private FiltrPController filtrPController = new FiltrPController();
 	private SpocitejController spocitejController = new SpocitejController();
 	private OdeslatController odeslatController = new OdeslatController();
@@ -39,20 +37,10 @@ public class ActionServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//tohle jen fiktivni naplneni listu pro Alcu - pak vymazat TODO
-		ArrayList<Kategorie> vyfiltrovaneKategorie = new ArrayList<Kategorie>();
-		Kategorie lusteniny = new Kategorie(1, "lusteniny");
-		Kategorie kosmetika = new Kategorie(2, "kosmetika ");
-		
-		vyfiltrovaneKategorie.add(lusteniny);
-		vyfiltrovaneKategorie.add(kosmetika);
 		
 		String action = request.getParameter("action");
 		
-		if (action.equals("vyfiltrujKaterogie")) {
-			filtrKController.handle(request, response);
-			request.setAttribute("vyfiltrovaneKategorie", vyfiltrovaneKategorie); //TODO vymazat - je to Alci
-		} else if (action.equals("vyfiltrujProdukty")) {
+		if (action.equals("vyfiltrujProdukty")) {
 			filtrPController.handle(request, response);
 		} else if (action.equals("spocitej")) {
 			spocitejController.handle(request, response);
