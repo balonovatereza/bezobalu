@@ -20,13 +20,5 @@ public class Kategorie {
 		this.nazev = nazev;
 	}
 
-	public Kategorie(int idKategorie, String nazev) {
-		super();
-		this.idKategorie = idKategorie;
-		this.nazev = nazev;
-	}
-
-	public Kategorie () {
-		
-	}
+	
 }

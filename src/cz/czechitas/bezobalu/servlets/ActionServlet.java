@@ -3,6 +3,7 @@ package cz.czechitas.bezobalu.servlets;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,9 +22,18 @@ import cz.czechitas.bezobalu.controllers.SpocitejController;
 public class ActionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+	private FiltrKController filtrKController = new FiltrKController();
 	private FiltrPController filtrPController = new FiltrPController();
 	private SpocitejController spocitejController = new SpocitejController();
 	private OdeslatController odeslatController = new OdeslatController();
+	
+	
+	
+	@Override
+    public void init(ServletConfig config) throws ServletException {
+		
+        super.init(config);
+    }
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -40,7 +50,10 @@ public class ActionServlet extends HttpServlet {
 		
 		String action = request.getParameter("action");
 		
-		if (action.equals("vyfiltrujProdukty")) {
+		
+		if (action.equals("vyfiltrujKaterogie")) {
+			filtrKController.handle(request, response);
+		} else if (action.equals("vyfiltrujProdukty")) {
 			filtrPController.handle(request, response);
 		} else if (action.equals("spocitej")) {
 			spocitejController.handle(request, response);

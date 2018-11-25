@@ -15,7 +15,6 @@ public class FiltrPController {
 		int idMesta =  Integer.parseInt(request.getParameter("idMesta"));
 		int idKategorie =  Integer.parseInt(request.getParameter("idKategorie"));
 		
-		//request.setAttribute("empList", fileDao.load());
-		request.setAttribute("vyfiltrovaneProdukty", jdbcDao.vyfiltrujProdukty(idMesta,idKategorie));
+		request.setAttribute("vyfiltrovaneProdukty", jdbcDao.filtrujProdukty(idMesta,idKategorie));
 	}
 }

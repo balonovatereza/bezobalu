@@ -16,15 +16,9 @@ public class FiltrKController {
 		System.out.println("tento controller je FiltrKController");
 		
 		int idMesta =  Integer.parseInt(request.getParameter("idMesta"));
+	
 		
-		
-		ArrayList<Kategorie> vyfiltrovaneKategorie = new ArrayList<Kategorie>();
-		
-		for (Kategorie kategorie:  vyfiltrovaneKategorie) {
-			System.out.println(kategorie.getId() + kategorie.getNazev());
-		}
-		
-		request.setAttribute("vyfiltrovaneKategorie", jdbcDao.vyfiltrujKategorie(idMesta));
+		request.setAttribute("vyfiltrovaneKategorie", jdbcDao.filtrujKategorie(idMesta));
 	}
 	
 }
