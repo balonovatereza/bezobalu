@@ -17,7 +17,7 @@ import cz.czechitas.bezobalu.controllers.SpocitejController;
 /**
  * Servlet implementation class ActionServlet
  */
-@WebServlet("/ActionServlet")
+@WebServlet("/action")
 public class ActionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final int Kategorie = 0; //TODO tohle potom vymazat nakonci
