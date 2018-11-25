@@ -3,6 +3,7 @@ package cz.czechitas.bezobalu.bean;
 public class Mesto {
 private int idMesta;
 private String nazev;
+
 public int getIdMesta() {
 	return idMesta;
 }
