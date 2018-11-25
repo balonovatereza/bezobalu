@@ -16,19 +16,15 @@ public class FiltrKController {
 		System.out.println("tento controller je FiltrKController");
 
 		int idMesta = 0;
-
-		if (request == null || request.getParameter("idMesta")==null) {
-			idMesta = 1;
-		} else {
-			idMesta=Integer.parseInt(request.getParameter("idMesta"));
+		if (request != null) {
+			if (request.getParameter("idMesta") == null) {
+				idMesta = 1;
+			} else {
+				idMesta = Integer.parseInt(request.getParameter("idMesta"));
+			}
+			request.setAttribute("vyfiltrovaneKategorie", jdbcDao.vyfiltrujKategorie(idMesta));
 		}
-		
-		request.setAttribute("vyfiltrovaneKategorie", jdbcDao.vyfiltrujKategorie(idMesta));
+
 	}
-	
-	
-	
-	
-	
 
 }

@@ -12,7 +12,7 @@ public class ZobrazPController {
 	public void zobrazProdukt(HttpServletRequest request, HttpServletResponse response) {
 		int idProduktu=Integer.parseInt(request.getParameter("idKategorie"));
 		
-		//request.setAttribute("zobrazProdukt", jdbcDao.vratProdukt(idProduktu));
+		request.setAttribute("zobrazProdukt", jdbcDao.vratProdukt(idProduktu));
 		
 	}
 

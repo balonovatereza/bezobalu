@@ -17,7 +17,7 @@ public class ZobrazKController {
 			idKategorie=Integer.parseInt(request.getParameter("idKategorie"));
 		}
 		
-		//request.setAttribute("zobrazKategorii", jdbcDao.vratKategorii(idKategorie));
+		request.setAttribute("zobrazKategorii", jdbcDao.vratKategorii(idKategorie));
 		
 	}
 	
