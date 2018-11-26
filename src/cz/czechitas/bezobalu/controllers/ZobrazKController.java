@@ -10,14 +10,17 @@ public class ZobrazKController {
 	private JdbcDao jdbcDao = new JdbcDao();
 	
 	public void zobrazKategorii(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("tento controller je ZobrazKController");
 		int idKategorie=0;
-		if (request == null || request.getParameter("idKategorie")==null) {
-			idKategorie = 1;
-		} else {
-			idKategorie=Integer.parseInt(request.getParameter("idKategorie"));
-		}
 		
-		request.setAttribute("zobrazKategorii", jdbcDao.vratKategorii(idKategorie));
+		if (request != null) {
+			if (request.getParameter("idKategorie") == null) {
+				idKategorie = 1;
+			} else {
+				idKategorie = Integer.parseInt(request.getParameter("idKategorie"));
+			}
+			request.setAttribute("vyfiltrovaneKategorie", jdbcDao.vyfiltrujKategorie(idKategorie));
+		}
 		
 	}
 	

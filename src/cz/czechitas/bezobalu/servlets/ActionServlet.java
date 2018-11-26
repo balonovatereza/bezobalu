@@ -55,17 +55,18 @@ public class ActionServlet extends HttpServlet {
 		String action = request.getParameter("action");
 		
 		if (action == null) {
-			filtrKController.handle(request, response); //vraci list kategorii
-		} else if (action.equals("zobrazKategorie")) {
-			zobrazKController.zobrazKategorii(request, response); //vracet jednu
+			filtrKController.handle(request, response); //vraci ArrayList kategorii do dropdown listu
+		} else if (action.equals("zobrazKategorii")) {
+			zobrazKController.zobrazKategorii(request, response); //vraci 1 kategorii
 			
 		} else if (action.equals("vyfiltrujProdukty")) {
-			filtrPController.handle(request, response); //vraci list produktu
-		} else if (action.equals("zobrazProdukty")) {
+			filtrPController.handle(request, response); //vraci ArrayList produktu do dropdown listu
+		} else if (action.equals("zobrazProdukt")) {
 			zobrazPController.zobrazProdukt(request, response); //vraci 1 produkt
+			
 		} else if (action.equals("spocitej")) {
 			spocitejController.handle(request, response); //vraci jeden aktualni vypocet
-			spocitejController.vypis(request, response); //vraci seznam vypoctu aktualizovany o 1 vypocet
+			spocitejController.vypis(request, response); //vraci seznam vypoctu aktualizovany o aktualni vypocet
 		} else if (action.equals("odeslat")) {
 			 odeslatController.handle(request, response);
 		}

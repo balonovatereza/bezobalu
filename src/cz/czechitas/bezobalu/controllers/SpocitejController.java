@@ -34,5 +34,4 @@ public class SpocitejController {
 		seznamVypoctu.add(radek);
 		return seznamVypoctu;
 	}
-	// request.setAttribute("empList", fileDao.load());
 }
