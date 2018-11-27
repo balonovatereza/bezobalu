@@ -18,14 +18,12 @@ import cz.czechitas.bezobalu.controllers.ZobrazKController;
 import cz.czechitas.bezobalu.controllers.ZobrazPController;
 
 /**
- * Servlet implementation class ActionServlet
+ * Servlet implementation class KalkulaceServlet
  */
 @WebServlet("/kalkulace")
-public class ActionServlet extends HttpServlet {
+public class KalkulaceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	private FiltrKController filtrKController = new FiltrKController();
-	private ZobrazKController zobrazKController = new ZobrazKController();
+
 	private FiltrPController filtrPController = new FiltrPController();
 	private ZobrazPController zobrazPController = new ZobrazPController();
 	private SpocitejController spocitejController = new SpocitejController();
@@ -37,14 +35,6 @@ public class ActionServlet extends HttpServlet {
     public void init(ServletConfig config) throws ServletException {
 		
         super.init(config);
-    }
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ActionServlet() {
-        super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -76,10 +66,6 @@ public class ActionServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-		
-		
 		doGet(request, response);
 	}
 
