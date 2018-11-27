@@ -19,7 +19,7 @@ public class ZobrazKController {
 			} else {
 				idKategorie = Integer.parseInt(request.getParameter("idKategorie"));
 			}
-			request.setAttribute("vyfiltrovaneKategorie", jdbcDao.vyfiltrujKategorie(idKategorie));
+			request.setAttribute("zobrazKategorii", jdbcDao.vratKategorii(idKategorie));
 		}
 		
 	}

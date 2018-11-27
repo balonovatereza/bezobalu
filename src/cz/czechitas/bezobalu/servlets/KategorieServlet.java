@@ -31,7 +31,6 @@ private static final long serialVersionUID = 1L;
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String action = request.getParameter("action");
 		filtrKController.handle(request, response); //vraci ArrayList kategorii do dropdown listu
 		getServletConfig().getServletContext().getRequestDispatcher("/kategorie.jsp").forward(request, response);
 	}

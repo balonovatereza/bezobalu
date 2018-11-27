@@ -1,7 +1,6 @@
 package cz.czechitas.bezobalu.servlets;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -10,12 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cz.czechitas.bezobalu.controllers.FiltrKController;
 import cz.czechitas.bezobalu.controllers.FiltrPController;
 import cz.czechitas.bezobalu.controllers.OdeslatController;
 import cz.czechitas.bezobalu.controllers.SpocitejController;
 import cz.czechitas.bezobalu.controllers.ZobrazKController;
-import cz.czechitas.bezobalu.controllers.ZobrazPController;
 
 /**
  * Servlet implementation class KalkulaceServlet
@@ -25,7 +22,7 @@ public class KalkulaceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private FiltrPController filtrPController = new FiltrPController();
-	private ZobrazPController zobrazPController = new ZobrazPController();
+	private ZobrazKController zobrazKController = new ZobrazKController();
 	private SpocitejController spocitejController = new SpocitejController();
 	private OdeslatController odeslatController = new OdeslatController();
 	
@@ -45,12 +42,8 @@ public class KalkulaceServlet extends HttpServlet {
 		String action = request.getParameter("action");
 		
 		if (action == null) {
-			filtrPController.handle(request, response); //vraci ArrayList kategorii do dropdown listu
-		
-		} else if (action.equals("vyfiltrujProdukty")) {
+			zobrazKController.zobrazKategorii(request, response); //zobrazi zvolenou kategorii do nadpisu
 			filtrPController.handle(request, response); //vraci ArrayList produktu do dropdown listu
-		} else if (action.equals("zobrazProdukt")) {
-			zobrazPController.zobrazProdukt(request, response); //vraci 1 produkt
 			
 		} else if (action.equals("spocitej")) {
 			spocitejController.handle(request, response); //vraci jeden aktualni vypocet
