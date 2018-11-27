@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BezObalu</title>
+<title>BezObalu-kalkulace</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,43 +16,12 @@
 
 	<form action="kalkulace" method="get">
 		<%
-			ArrayList<Kategorie> vyfiltrovaneKategorie = (ArrayList<Kategorie>) request.getAttribute("vyfiltrovaneKategorie");
+			
 			ArrayList<Produkt> vyfiltrovaneProdukty = (ArrayList<Produkt>) request.getAttribute("vyfiltrovaneProdukty");
 		%>
-		<br> <select name="idKategorie">
-			<%
-				if (vyfiltrovaneKategorie != null) {
-					for (Kategorie jednaKategorie : vyfiltrovaneKategorie) {
-			%>
-			<option value="<%=jednaKategorie.getIdKategorie()%>"><%=jednaKategorie.getNazev()%></option>
-			<%
-				}
-				}
-			%>
-		</select>
-		<button name="action" value="vyfiltrujProdukty" type="submit">Vyber
-			produkt</button>
-
-
 		<br>
-
-		<ul>
-			<%
-				if (vyfiltrovaneProdukty != null) {
-					for (Produkt jedenProdukt : vyfiltrovaneProdukty) {
-			%>
-			<li><%=jedenProdukt.getNazev()%></li>
-			<%
-				}
-				}
-			%>
-
-		</ul>
-	</form>
-
-
-	<form action="spocitej" method="get">
-		<select name="produkt">
+		
+	<select class="custom-select" name="produkt">
 			<%
 				if (vyfiltrovaneProdukty != null) {
 					for (Produkt jedenProdukt : vyfiltrovaneProdukty) {
@@ -63,21 +32,32 @@
 				}
 			%>
 
-		</select>
+	</select>
 	
+	<button class="tlacitko tlacitko-vetsi" name="action" value="vyfiltrujProdukty" type="submit">Vyber
+			produkt</button>
+
+
+		<br>
+
+		
+	</form>
+
+
+	<form action="spocitej" method="get">	
 	    <input name="gramy" type="number" />
 	     <br>
-		<button type="button">12g</button>
-		<button type="button">200g</button>
-		<button type="button">500g</button>
-		<button name="action" value="spocitej" type="submit">Vypocet</button>
+		<button class="tlacitko" type="button">12g</button>
+		<button class="tlacitko" type="button">200g</button>
+		<button class="tlacitko" type="button">500g</button>
+		<button class="tlacitko tlacitko-vetsi" name="action" value="spocitej" type="submit">Vypocet</button>
 
 	</form>
 	<br>
 	<br>
 	<form action="odeslat" method="post">
 		<input name="email" type="email" />
-		<button name="action" value="odeslat" type="submit">Odesli na email</button>
+		<button class="tlacitko tlacitko-vetsi" name="action" value="odeslat" type="submit">Odesli na email</button>
 	</form>
 
 

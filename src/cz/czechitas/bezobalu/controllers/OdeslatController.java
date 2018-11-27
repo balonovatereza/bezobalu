@@ -2,19 +2,14 @@ package cz.czechitas.bezobalu.controllers;
 
 import java.util.Properties;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class OdeslatController {
 	public void handle(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("tento controller je OdeslatController");
-		  
+		  /* 
 			      // Recipient's email ID needs to be mentioned.
 			      String to = "elichnovska@gmail.com";
 
@@ -49,7 +44,7 @@ public class OdeslatController {
 			         System.out.println("Sent message successfully....");
 			      } catch (MessagingException mex) {
 			         mex.printStackTrace();
-			      }
+			      }*/
 			   }
 			}
 

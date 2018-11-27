@@ -1,37 +1,43 @@
 package cz.czechitas.bezobalu.servlets;
 
 import java.io.IOException;
+
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import cz.czechitas.bezobalu.controllers.FiltrKController;
 
-/**
- * Servlet implementation class IndexServlet
- */
-@WebServlet("/vyberMesta")
-public class IndexServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+@WebServlet("/kategorie")
+public class KategorieServlet extends HttpServlet  {
+private static final long serialVersionUID = 1L;
 	
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public IndexServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	private FiltrKController filtrKController = new FiltrKController();
 
+	
+	
+	@Override
+    public void init(ServletConfig config) throws ServletException {
+		
+        super.init(config);
+    }
+       
+  
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String action = request.getParameter("action");
 		
-		System.out.println("IndexServlet");
-		getServletConfig().getServletContext().getRequestDispatcher("/vyberMesta.jsp").forward(request, response);
+		
+			filtrKController.handle(request, response); //vraci ArrayList kategorii do dropdown listu
+		
+		
+		getServletConfig().getServletContext().getRequestDispatcher("/kategorie.jsp").forward(request, response);
 	}
 
 	/**
@@ -39,6 +45,9 @@ public class IndexServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		
+		
 		doGet(request, response);
 	}
 

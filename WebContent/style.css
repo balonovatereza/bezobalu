@@ -30,32 +30,59 @@ h1 {
   font-size: 32px;
 }
 
-button, .tlacitko {
-  background-color: rgba(95, 67, 14, 0.47);
+.mujdiv{
+	width: 100%;
+	text-align: center;
+
+}
+
+.kalkulace{
+	padding: 60px 90px;
+}
+
+.gramy{
+	padding: 15px 25px;
+}
+
+.tlacitkoVyberMesta{
+	padding: 60px 90px;
+}
+
+.tlacitko {
+  background-color: rgba(95, 67, 14);
   border: 3px solid #261e0f;
-  color: #261e0f;
-  padding: 15px 32px;
+  color: white;
+  padding: 15px 25px;
   text-align: center;
   text-decoration: none;
   border-radius: 5px;
   text-decoration: none;
   display: inline-block;
   font-family: 'Space Mono', monospace;
-  font-size: 16px;
+  font-size: 30px;
   margin: 4px 2px;
   cursor: pointer;
   font-weight:bold;
 }
 
 
-button:hover, .tlacitko:hover {
+ .tlacitko:hover {
   background-color: #261e0f;
   color: white;}
 
-button:hover, .tlacitko:hover {
+/*button:hover, .tlacitko:hover {
   background-color: #261e0f;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+*/
+
+.tlacitko-vetsi {
+	padding: 30px 50px;
+}
+
+.tlacitko-nejvetsi {
+	padding: 80px 60px;
 }
 
 .dropdown-content {
@@ -83,4 +110,13 @@ button:hover, .tlacitko:hover {
 
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+
+.custom-select {
+  
+  top: 14px;
+  right: 10px;
+  
+  border: 6px solid ;
+  border-color: #fff transparent transparent transparent;
 }

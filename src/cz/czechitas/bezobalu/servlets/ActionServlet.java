@@ -55,10 +55,8 @@ public class ActionServlet extends HttpServlet {
 		String action = request.getParameter("action");
 		
 		if (action == null) {
-			filtrKController.handle(request, response); //vraci ArrayList kategorii do dropdown listu
-		} else if (action.equals("zobrazKategorii")) {
-			zobrazKController.zobrazKategorii(request, response); //vraci 1 kategorii
-			
+			filtrPController.handle(request, response); //vraci ArrayList kategorii do dropdown listu
+		
 		} else if (action.equals("vyfiltrujProdukty")) {
 			filtrPController.handle(request, response); //vraci ArrayList produktu do dropdown listu
 		} else if (action.equals("zobrazProdukt")) {
