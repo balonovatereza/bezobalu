@@ -3,6 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,11 +16,9 @@
 	<h1>BezObalu</h1>
 
 	<form action="kalkulace" method="get">
-		<%
-			
+		<%	
 			ArrayList<Produkt> vyfiltrovaneProdukty = (ArrayList<Produkt>) request.getAttribute("vyfiltrovaneProdukty");
 		%>
-		<br>
 		
 	<select class="custom-select" name="produkt">
 			<%
@@ -37,27 +36,25 @@
 	<button class="tlacitko tlacitko-vetsi" name="action" value="vyfiltrujProdukty" type="submit">Vyber
 			produkt</button>
 
-
 		<br>
-
-		
+		<br>
 	</form>
 
-
 	<form action="spocitej" method="get">	
-	    <input name="gramy" type="number" />
-	     <br>
-		<button class="tlacitko" type="button">12g</button>
-		<button class="tlacitko" type="button">200g</button>
-		<button class="tlacitko" type="button">500g</button>
-		<button class="tlacitko tlacitko-vetsi" name="action" value="spocitej" type="submit">Vypocet</button>
+	    <input class="custom-select" name="gramy" type="number" />
+	  	<button class="tlacitko tlacitko-vetsi" name="action" value="spocitej" type="submit">Výpočet</button>
+	  	<br>
+		<button class="tlacitko tlacitkoGramy" type="button">12g</button>
+		<button class="tlacitko tlacitkoGramy" type="button">200g</button>
+		<button class="tlacitko tlacitkoGramy" type="button">500g</button>
+		
 
 	</form>
 	<br>
 	<br>
 	<form action="odeslat" method="post">
-		<input name="email" type="email" />
-		<button class="tlacitko tlacitko-vetsi" name="action" value="odeslat" type="submit">Odesli na email</button>
+		<input class="custom-select" name="email" type="email" />
+		<button class="tlacitko tlacitko-vetsi" name="action" value="odeslat" type="submit">Odešli na email</button>
 	</form>
 
 

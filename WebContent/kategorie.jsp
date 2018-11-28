@@ -4,6 +4,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,14 +21,14 @@
 			ArrayList<Kategorie> vyfiltrovaneKategorie = (ArrayList<Kategorie>) request.getAttribute("vyfiltrovaneKategorie");
 			ArrayList<Produkt> vyfiltrovaneProdukty = (ArrayList<Produkt>) request.getAttribute("vyfiltrovaneProdukty");
 		%>
-		<br> 
+	
 			<%
 				if (vyfiltrovaneKategorie != null) {
 					for (Kategorie jednaKategorie : vyfiltrovaneKategorie) {
 			%>
 			<button class="tlacitko tlacitko-vetsi" name="action" value="<%=jednaKategorie.getIdKategorie()%>"><%=jednaKategorie.getNazev()%>
 			</button>
-		
+
 			<%
 				}
 				}

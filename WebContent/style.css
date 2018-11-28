@@ -1,74 +1,81 @@
 @charset "UTF-8";
 /* Fonts from Google Fonts - more at https://fonts.google.com */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
 
 body {
-  background-color: rgba(96, 54, 192, 0) ;
-  font-family: 'Space Mono', monospace;
-  padding: 5px 25px;
-  font-size: 18px;
-  margin: 0;
-  color: #261e0f;
-  background: url(Fotky/BezObaluPic2.jpg);
-  background-repeat:no-repeat;
-  background-size: cover;
-  background-position: right bottom;
-  height: 100%;
-  background-attachment: fixed;
+	background-color: rgba(96, 54, 192, 0);
+	font-family: 'Space Mono', monospace;
+	padding: 5px 25px;
+	font-size: 18px;
+	margin: 0;
+	color: #261e0f;
+	background: url(Fotky/BezObaluPic2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: right bottom;
+	height: 100%;
+	background-attachment: fixed;
 }
 
 html {
-	height: 100%;}
-ul {
-  list-style-type: square;
+	height: 100%;
 }
 
+ul {
+	list-style-type: square;
+	font-size: 25px;
+}
 
 h1 {
-  font-family: 'Space Mono', monospace;
-  font-size: 32px;
+	font-family: 'Space Mono', monospace;
+	font-size: 60px;
+	font-weight: bold;
+	text-align: center;
 }
 
-.mujdiv{
+.mujdiv {
 	width: 100%;
 	text-align: center;
-
 }
 
-.kalkulace{
+.kalkulace {
 	padding: 60px 90px;
 }
 
-.gramy{
+.gramy {
 	padding: 15px 25px;
 }
 
-.tlacitkoVyberMesta{
+.tlacitkoVyberMesta {
 	padding: 60px 90px;
 }
 
 .tlacitko {
-  background-color: rgba(95, 67, 14);
-  border: 3px solid #261e0f;
-  color: white;
-  padding: 15px 25px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
-  font-family: 'Space Mono', monospace;
-  font-size: 30px;
-  margin: 4px 2px;
-  cursor: pointer;
-  font-weight:bold;
+	/*background-color: rgba(95, 67, 14) ;*/
+	background-color: #3B2C35;
+	border: 3px solid #261e0f;
+	color: white;
+	padding: 15px 25px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 5px;
+	text-decoration: none;
+	display: inline-block;
+	font-family: 'Space Mono', monospace;
+	font-size: 30px;
+	/*margin: 4px 2px;*/
+	margin: 8px 15px;
+	cursor: pointer;
+	font-weight: bold;
 }
 
-
- .tlacitko:hover {
-  background-color: #261e0f;
-  color: white;}
+.tlacitko:hover {
+	/*background-color: #261e0f;*/
+	background-color: #5B6C5D;
+	color: white;
+}
 
 /*button:hover, .tlacitko:hover {
   background-color: #261e0f;
@@ -76,47 +83,61 @@ h1 {
   transform: translateY(4px);
 }
 */
-
 .tlacitko-vetsi {
-	padding: 30px 50px;
+	padding: inherit;
+    height: 90px;
+    width: 450px;
 }
 
 .tlacitko-nejvetsi {
-	padding: 80px 60px;
+	padding: 40px 70px;
+	font-size: 40px;
+}
+
+.tlacitkoGramy{
+	 height: 80px;
+     width: 110px;
+     padding: 5px;
 }
 
 .dropdown-content {
-  display: none;
-  font-size: 12px;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+	display: none;
+	font-size: 12px;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
 
 .dropdown:hover .dropdown-content {
-  display: block;
+	display: block;
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+	background-color: #3e8e41;
 }
 
 .custom-select {
-  
-  top: 14px;
-  right: 10px;
-  
-  border: 6px solid ;
-  border-color: #fff transparent transparent transparent;
+	font-family: 'Space Mono', monospace;
+	font-size: 25px;
+	top: 0px;
+	right: auto;
+	width: 300px;
+	height: 70px;
+	position: relative;
+	border: 3px solid #261e0f;
+	border-radius: 5px;
+	margin: 8px 15px;
 }
