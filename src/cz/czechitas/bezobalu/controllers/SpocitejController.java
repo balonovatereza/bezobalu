@@ -38,27 +38,27 @@ public class SpocitejController {
 	}
 
 	public ArrayList<String> vypis(HttpServletRequest request, HttpServletResponse response) {
-		
+
 		HttpSession session = request.getSession();
 		ArrayList<String> seznamVypoctu = (ArrayList<String>) session.getAttribute("seznamVypoctu");
 		if (seznamVypoctu == null) {
 			seznamVypoctu = new ArrayList<String>();
-		} 
+		}
 		String radek = "";
-		
-		//osetruji oba vstupy, kdyby byly null
-				if ((request == null) || (request.getParameter("idProduktu") == null)) {
-					idProduktu = 1;
-				} else {
-					idProduktu = Integer.parseInt(request.getParameter("idProduktu"));
-				}
 
-				if ((request == null) || (request.getParameter("gramy") == null)) {
-					gramy = 1;
-				} else {
-					gramy = Integer.parseInt(request.getParameter("gramy"));
-				}
-				
+		// osetruji oba vstupy, kdyby byly null
+		if ((request == null) || (request.getParameter("idProduktu") == null)) {
+			idProduktu = 1;
+		} else {
+			idProduktu = Integer.parseInt(request.getParameter("idProduktu"));
+		}
+
+		if ((request == null) || (request.getParameter("gramy") == null)) {
+			gramy = 1;
+		} else {
+			gramy = Integer.parseInt(request.getParameter("gramy"));
+		}
+
 		radek = idProduktu + " " + gramy + " " + vypocet;
 		seznamVypoctu.add(radek);
 		session.setAttribute("seznamVypoctu", seznamVypoctu);

@@ -11,8 +11,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BezObalu-kalkulace</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
+<div class="container md">
 	<h1>BezObalu</h1>
 
 	<form action="kalkulace" method="get">
@@ -20,7 +22,7 @@
 			ArrayList<Produkt> vyfiltrovaneProdukty = (ArrayList<Produkt>) request.getAttribute("vyfiltrovaneProdukty");
 		%>
 		
-	<select class="custom-select" name="produkt">
+	<select class="custom-select" name="idProduktu">
 			<%
 				if (vyfiltrovaneProdukty != null) {
 					for (Produkt jedenProdukt : vyfiltrovaneProdukty) {
@@ -41,23 +43,23 @@
 	</form>
 
 	<form action="spocitej" method="get">	
-	    <input class="custom-select" name="gramy" type="number" />
+	    <input class="custom-select" name="gramy" type="number" placeholder="Množství v gramech"/>
 	  	<button class="tlacitko tlacitko-vetsi" name="action" value="spocitej" type="submit">Výpočet</button>
 	  	<br>
-		<button class="tlacitko tlacitkoGramy" type="button">12g</button>
-		<button class="tlacitko tlacitkoGramy" type="button">200g</button>
-		<button class="tlacitko tlacitkoGramy" type="button">500g</button>
+		<button class="tlacitko tlacitkoGramy" type="button">12 g</button>
+		<button class="tlacitko tlacitkoGramy" type="button">200 g</button>
+		<button class="tlacitko tlacitkoGramy" type="button">500 g</button>
 		
 
 	</form>
 	<br>
 	<br>
 	<form action="odeslat" method="post">
-		<input class="custom-select" name="email" type="email" />
+		<input class="custom-select" name="email" type="email" placeholder="muj@email.cz"/>
 		<button class="tlacitko tlacitko-vetsi" name="action" value="odeslat" type="submit">Odešli na email</button>
 	</form>
 
 
-
+</div>
 </body>
 </html>

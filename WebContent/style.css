@@ -141,3 +141,16 @@ h1 {
 	border-radius: 5px;
 	margin: 8px 15px;
 }
+
+input, select, textarea{
+  
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    box-sizing:content-box;
+    -webkit-box-sizing:content-box; 
+}
+
+.mainContainer {
+	width:50%;
+	margin:auto;
+}

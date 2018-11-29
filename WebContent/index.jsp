@@ -10,6 +10,6 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <% response.sendRedirect("/vyberMesta"); %>
+    <% response.sendRedirect("vyberMesta.jsp"); %>
   </body>
 </html>
