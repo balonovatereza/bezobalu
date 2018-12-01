@@ -16,9 +16,9 @@
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
+<section id="container">
+<%@ include file="header.jsp"%>
 <div class="container md">
-	<h1>BezObalu</h1>
-	
 	<form action="kalkulace" method="get">
 	
 		<%	
@@ -65,5 +65,6 @@
 
 
 </div>
+</section>
 </body>
 </html>
