@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.Session;
 
+import cz.czechitas.bezobalu.bean.Produkt;
 import cz.czechitas.bezobalu.dao.JdbcDao;
 
 public class SpocitejController {
@@ -37,31 +38,33 @@ public class SpocitejController {
 		request.setAttribute("vypocet", vypocet);
 	}
 
-	public ArrayList<String> vypis(HttpServletRequest request, HttpServletResponse response) {
-
-		HttpSession session = request.getSession();
-		ArrayList<String> seznamVypoctu = (ArrayList<String>) session.getAttribute("seznamVypoctu");
-		if (seznamVypoctu == null) {
-			seznamVypoctu = new ArrayList<String>();
+		public ArrayList<String> vypis(HttpServletRequest request, HttpServletResponse response) {
+	
+			HttpSession session = request.getSession();
+			ArrayList<String> seznamVypoctu = (ArrayList<String>) session.getAttribute("seznamVypoctu");
+			if (seznamVypoctu == null) {
+				seznamVypoctu = new ArrayList<String>();
+			}
+			String radek = "";
+	
+			// osetruji oba vstupy, kdyby byly null
+			if ((request == null) || (request.getParameter("idProduktu") == null)) {
+				idProduktu = 1;
+			} else {
+				idProduktu = Integer.parseInt(request.getParameter("idProduktu"));
+			}
+	
+			if ((request == null) || (request.getParameter("gramy") == null)) {
+				gramy = 1;
+			} else {
+				gramy = Integer.parseInt(request.getParameter("gramy"));
+			}
+			Produkt produkt = new Produkt();
+			produkt = jdbcDao.vratProdukt(idProduktu);
+					
+			radek = produkt.getNazev() + " " + gramy + " " + vypocet;
+			seznamVypoctu.add(radek);
+			session.setAttribute("seznamVypoctu", seznamVypoctu);
+			return seznamVypoctu;
 		}
-		String radek = "";
-
-		// osetruji oba vstupy, kdyby byly null
-		if ((request == null) || (request.getParameter("idProduktu") == null)) {
-			idProduktu = 1;
-		} else {
-			idProduktu = Integer.parseInt(request.getParameter("idProduktu"));
-		}
-
-		if ((request == null) || (request.getParameter("gramy") == null)) {
-			gramy = 1;
-		} else {
-			gramy = Integer.parseInt(request.getParameter("gramy"));
-		}
-
-		radek = idProduktu + " " + gramy + " " + vypocet;
-		seznamVypoctu.add(radek);
-		session.setAttribute("seznamVypoctu", seznamVypoctu);
-		return seznamVypoctu;
-	}
 }
