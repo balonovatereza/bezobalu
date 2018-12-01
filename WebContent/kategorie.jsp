@@ -13,15 +13,15 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-	<h1>BezObalu</h1>
+<section id="container">
+<%@ include file="header.jsp"%>
 
 	<form action="kalkulace" method="get">
 		<%
 			ArrayList<Kategorie> vyfiltrovaneKategorie = (ArrayList<Kategorie>) request
 					.getAttribute("vyfiltrovaneKategorie");
-			ArrayList<Produkt> vyfiltrovaneProdukty = (ArrayList<Produkt>) request.getAttribute("vyfiltrovaneProdukty");
-			int idMesta = Integer.parseInt(request.getParameter("idMesta"));
+			
+		int idMesta = Integer.parseInt(request.getParameter("idMesta"));
 		%>
 
 		<%
@@ -35,5 +35,7 @@
 			}
 		%>
 	</form>
+	</section>
+	
 </body>
 </html>
