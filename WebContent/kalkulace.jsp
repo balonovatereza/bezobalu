@@ -24,32 +24,14 @@
 <section id="container">
 <%@ include file="header.jsp"%>
 <div class="container md">
-	
+<br>	
 	Název vybrané kategorie :
 	
-		<%	
+			<%	
 			ArrayList<Produkt> vyfiltrovaneProdukty = (ArrayList<Produkt>) request.getAttribute("vyfiltrovaneProdukty");
 			Kategorie nazevKategorie = (Kategorie) request.getAttribute("zobrazKategorii");
 			out.print(nazevKategorie.getNazev());
 			%>
-	<%--<br>
-	<br>
-	Seznam produktů:
-	<br>
-	<br>
-			<%
-			if (vyfiltrovaneProdukty != null) {
-					for (Produkt jedenProdukt : vyfiltrovaneProdukty) {
-			%>
-	
-			<ul>
- 				 <li><%=jedenProdukt.getNazev()%></li>
-			</ul>
-			<%
-				}
-				}
-			%>
-	--%>
 
 	<form action="kalkulace" method="get">
 		<select class="custom-select" name="idProduktu">
@@ -63,20 +45,27 @@
 				}
 			%>
 		</select>	
-	    <input id="gramy" class="custom-select" name="gramy" type="number" placeholder="Množství v gramech"/>
+	    <input id="gramy" class="custom-select" name="gramy" type="number" placeholder="0 g"/>
         <input type="hidden" name="idMesta" value="<%=request.getParameter("idMesta")%>">
         <input type="hidden" name="idKategorie" value="<%=request.getParameter("idKategorie")%>">
-	  	<button class="tlacitko tlacitko-kalkulace" name="action" value="spocitej" type="submit">Výpočet</button>
-	  	<textarea class="custom-select seznamVypoctu"  name="comment" form="usrform" placeholder=" seznam výpočtů">výpočet :</textarea>
-
+	  	<button class="tlacitko tlacitko-kalkulace" name="action" value="spocitej" type="submit">Spočítej</button>
+	  	<%--<textarea class="custom-select seznamVypoctu"  name="comment" form="usrform" placeholder=" seznam výpočtů">výpočet :</textarea> --%>
+		
 	  	<br>
 		<button class="tlacitko tlacitkoGramy" type="button" onclick="document.getElementById('gramy').value = parseInt(document.getElementById('gramy').value) + 12 ">12g</button>
         <button class="tlacitko tlacitkoGramy" type="button" onclick="document.getElementById('gramy').value =parseInt(document.getElementById('gramy').value) + 250 ">250g</button>
         <button class="tlacitko tlacitkoGramy" type="button" onclick="document.getElementById('gramy').value =parseInt(document.getElementById('gramy').value) + 500 ">500g</button>
-		<br>
-		<%
-		ArrayList<String> seznamVypoctu = (ArrayList<String>) request.getAttribute("seznamVypoctu");
-		out.print("boruvky 25g 100kc");
+	</form>
+	
+	<br>
+	<% 
+	
+		out.print(request.getAttribute("vypocet"));
+	%>
+	<br>
+	<%
+		ArrayList<String> seznamVypoctu = (ArrayList<String>) request.getSession().getAttribute("seznamVypoctu");
+		
                     if (seznamVypoctu != null) {
                 %>
                 <ul>
@@ -85,6 +74,7 @@
                     %>
                     <li>
                         <%
+                        
                             out.print(radek);
                         %>
                     </li>
@@ -93,7 +83,6 @@
                         }
                     %>
                 </ul>
-	</form>
 	<br>
 
 	<form action="kalkulace" method="post">
@@ -101,8 +90,6 @@
 		<button class="tlacitko tlacitko-kalkulace" name="action" value="odeslat" type="submit">Odešli na email</button>
 	</form>
 
-
-</div>
 </section>
 </body>
 </html>
