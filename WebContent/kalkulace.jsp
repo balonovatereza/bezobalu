@@ -64,7 +64,7 @@
 	<br>
 	<br>
 
-	<form action="spocitej" method="get">
+	<form action="kalkulace" method="get">
 		<select class="custom-select" name="idProduktu">
 			<%
 				if (vyfiltrovaneProdukty != null) {
@@ -77,6 +77,8 @@
 			%>
 		</select>	
 	    <input id="gramy" class="custom-select" name="gramy" type="number" placeholder="Množství v gramech"/>
+        <input type="hidden" name="idMesta" value="<%=request.getParameter("idMesta")%>">
+        <input type="hidden" name="idKategorie" value="<%=request.getParameter("idKategorie")%>">
 	  	<button class="tlacitko tlacitko-vetsi" name="action" value="spocitej" type="submit">Výpočet</button>
 	  	<textarea class="custom-select seznamVypoctu"  name="comment" form="usrform" placeholder=" seznam výpočtů">výpočet :</textarea>
 	  	<br>
