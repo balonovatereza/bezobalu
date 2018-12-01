@@ -15,7 +15,7 @@ public class OdeslatController {
 	
 	public void handle(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("tento controller je OdeslatController");
-		Properties props = new Properties();
+		/*Properties props = new Properties();
 		
 		final String username = "bezobalu25@gmail.com";
         final String password = "Tankt3434";
@@ -49,7 +49,7 @@ public class OdeslatController {
 
         } catch (MessagingException e) {
             throw new RuntimeException(e);
-        }
+        }*/
 
 	}
 }
