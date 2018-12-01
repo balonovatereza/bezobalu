@@ -1,5 +1,7 @@
 <%@page import="cz.czechitas.bezobalu.servlets.*"%>
 <%@page import="cz.czechitas.bezobalu.bean.*"%>
+<%@page import="cz.czechitas.bezobalu.dao.*"%>
+<%@page import="cz.czechitas.bezobalu.controllers.*"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -17,12 +19,11 @@
 <section id="container">
 <%@ include file="header.jsp"%>
 <div class="container md">
-
 	<form action="kalkulace" method="get">
+	
 		<%	
 			ArrayList<Produkt> vyfiltrovaneProdukty = (ArrayList<Produkt>) request.getAttribute("vyfiltrovaneProdukty");
 		%>
-		
 	<select class="custom-select" name="idProduktu">
 			<%
 				if (vyfiltrovaneProdukty != null) {
@@ -46,17 +47,19 @@
 	<form action="spocitej" method="get">	
 	    <input class="custom-select" name="gramy" type="number" placeholder="Množství v gramech"/>
 	  	<button class="tlacitko tlacitko-vetsi" name="action" value="spocitej" type="submit">Výpočet</button>
+	  	<textarea class="custom-select seznamVypoctu"  name="comment" form="usrform" placeholder=" seznam výpočtů">seznam výpočtů :</textarea>
 	  	<br>
-		<button class="tlacitko tlacitkoGramy" type="button">12 g</button>
-		<button class="tlacitko tlacitkoGramy" type="button">200 g</button>
-		<button class="tlacitko tlacitkoGramy" type="button">500 g</button>
-		
-
+		<button class="tlacitko tlacitkoGramy" type="button">12g</button>
+		<button class="tlacitko tlacitkoGramy" type="button">200g</button>
+		<button class="tlacitko tlacitkoGramy" type="button">500g</button>
 	</form>
 	<br>
 	<br>
-	<form action="odeslat" method="post">
-		<input class="custom-select" name="email" type="email" placeholder="muj@email.cz"/>
+	
+	
+	
+	<form action="kalkulace" method="post">
+		<input class="custom-select" name="email" type="email" placeholder=" muj@email.cz"/>
 		<button class="tlacitko tlacitko-vetsi" name="action" value="odeslat" type="submit">Odešli na email</button>
 	</form>
 

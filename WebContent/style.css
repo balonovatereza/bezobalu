@@ -78,6 +78,10 @@ h1 {
 	padding: 10px 0;
     width: 450px;
 }
+.tlacitko-vetsi-vybrana-kat {
+	top: 30px;
+}
+
 .tlacitko-nejvetsi {
 	padding: 15px 0px;
 	width: 180px;
@@ -118,9 +122,16 @@ h1 {
 	background-color: #3e8e41;
 }
 
+.custom-select .seznamVypoctu {
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    box-sizing:content-box;
+    -webkit-box-sizing:content-box; 
+}
+
 .custom-select {
 	font-family: 'Space Mono', monospace;
-	font-size: 25px;
+	font-size: 20px;
 	top: 0px;
 	right: auto;
 	width: 300px;
@@ -178,4 +189,10 @@ li:before {
     font-family: 'FontAwesome';
     content: '\f06c';
     margin:0 5px 0 -25px;
+}
+.seznamVypoctu {
+	top: 38px;
+    align-content:left;
+    /*text-align:left;*/
+    resize: vertical;
 }
