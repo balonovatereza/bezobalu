@@ -37,7 +37,7 @@
 
 	</select>
 	
-	<button class="tlacitko tlacitko-vetsi" name="action" value="vyfiltrujProdukty" type="submit">Vyber
+	<button class="tlacitko tlacitko-kalkulace" name="action" value="vyfiltrujProdukty" type="submit">Vyber
 			produkt</button>
 
 		<br>
@@ -46,8 +46,8 @@
 
 	<form action="spocitej" method="get">	
 	    <input class="custom-select" name="gramy" type="number" placeholder="Množství v gramech"/>
-	  	<button class="tlacitko tlacitko-vetsi" name="action" value="spocitej" type="submit">Výpočet</button>
-	  	<textarea class="custom-select seznamVypoctu"  name="comment" form="usrform" placeholder=" seznam výpočtů">seznam výpočtů :</textarea>
+	  	<button class="tlacitko tlacitko-kalkulace" name="action" value="spocitej" type="submit">Výpočet</button>
+	  	<textarea class="custom-select"  name="comment" form="usrform" placeholder=" seznam výpočtů">seznam výpočtů :</textarea>
 	  	<br>
 		<button class="tlacitko tlacitkoGramy" type="button">12g</button>
 		<button class="tlacitko tlacitkoGramy" type="button">200g</button>
@@ -60,7 +60,7 @@
 	
 	<form action="kalkulace" method="post">
 		<input class="custom-select" name="email" type="email" placeholder=" muj@email.cz"/>
-		<button class="tlacitko tlacitko-vetsi" name="action" value="odeslat" type="submit">Odešli na email</button>
+		<button class="tlacitko tlacitko-kalkulace" name="action" value="odeslat" type="submit">Odešli na email</button>
 	</form>
 
 

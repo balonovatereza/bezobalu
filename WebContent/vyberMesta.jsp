@@ -42,13 +42,12 @@
 	</div>
 	<br>
 	<br>
-	<div class="mujdiv">
-		<a class="tlacitko tlacitko-nejvetsi" href="kategorie?idMesta=1">Ostrava</a>
+	<div class="divTownPicker">
+		<a class="tlacitko tlacitko-mesto" href="kategorie?idMesta=1">Ostrava</a>
 
-		<a class="tlacitko tlacitko-nejvetsi" href="kategorie?idMesta=2">Olomouc</a>
+		<a class="tlacitko tlacitko-mesto" href="kategorie?idMesta=2">Olomouc</a>
 	</div>
 
-	<div></div>
 	</section>
 </body>
 </html>
