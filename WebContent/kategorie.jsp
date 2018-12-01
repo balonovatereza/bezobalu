@@ -15,13 +15,12 @@
 <body>
 <section id="container">
 <%@ include file="header.jsp"%>
-
-	<form action="kalkulace" method="get">
+<form action="kalkulace" method="get">
 		<%
 			ArrayList<Kategorie> vyfiltrovaneKategorie = (ArrayList<Kategorie>) request
 					.getAttribute("vyfiltrovaneKategorie");
 			
-		int idMesta = Integer.parseInt(request.getParameter("idMesta"));
+		int idMesta = Integer.parseInt(request.getParameter("idMesta"));//to si nacte z linku
 		%>
 
 		<%
@@ -34,7 +33,7 @@
 			}
 			}
 		%>
-	</form>
+		</form>
 	</section>
 	
 </body>
