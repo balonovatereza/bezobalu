@@ -52,12 +52,16 @@
 	  	<%--<textarea class="custom-select seznamVypoctu"  name="comment" form="usrform" placeholder=" seznam výpočtů">výpočet :</textarea> --%>
 		
 	  	<br>
-		<button class="tlacitko tlacitkoGramy" type="button" onclick="document.getElementById('gramy').value = parseInt(document.getElementById('gramy').value) + 12 ">12g</button>
-        <button class="tlacitko tlacitkoGramy" type="button" onclick="document.getElementById('gramy').value =parseInt(document.getElementById('gramy').value) + 250 ">250g</button>
-        <button class="tlacitko tlacitkoGramy" type="button" onclick="document.getElementById('gramy').value =parseInt(document.getElementById('gramy').value) + 500 ">500g</button>
+		<button class="tlacitko tlacitkoGramy" type="button" onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 50  ">50g</button>
+        <button class="tlacitko tlacitkoGramy" type="button" onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 100  ">100g</button>
+        <button class="tlacitko tlacitkoGramy" type="button" onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 200  ">200g</button>
+		<button class="tlacitko tlacitkoGramy" type="button" onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 250  ">250g</button>
+        <button class="tlacitko tlacitkoGramy" type="button" onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 500  ">500g</button>
 	</form>
 	
 	<br>
+	
+	Výsledná cena :
 	<% 
 	
 		out.print(request.getAttribute("vypocet"));
@@ -87,7 +91,7 @@
 
 	<form action="kalkulace" method="post">
 		<input class="custom-select" name="email" type="email" placeholder=" muj@email.cz"/>
-		<button class="tlacitko tlacitko-kalkulace" name="action" value="odeslat" type="submit">Odešli na email</button>
+		<button class="tlacitko tlacitko-kalkulace" name="action" value="odeslat" type="submit">Odešli</button>
 	</form>
 
 </section>
