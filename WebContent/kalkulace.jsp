@@ -13,8 +13,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BezObalu-kalkulace</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
+<div class="container md">
 	<h1>BezObalu</h1>
 	
 	<form action="kalkulace" method="get">
@@ -22,8 +24,7 @@
 		<%	
 			ArrayList<Produkt> vyfiltrovaneProdukty = (ArrayList<Produkt>) request.getAttribute("vyfiltrovaneProdukty");
 		%>
-	<button class="tlacitko tlacitko-vetsi" name="action" value="vyfiltrujKategorie" type="submit"></button>	
-	<select class="custom-select" name="produkt">
+	<select class="custom-select" name="idProduktu">
 			<%
 				if (vyfiltrovaneProdukty != null) {
 					for (Produkt jedenProdukt : vyfiltrovaneProdukty) {
@@ -43,8 +44,8 @@
 		<br>
 	</form>
 
-	<form action="kalkulace" method="get">	
-	    <input class="custom-select" name="gramy" type="number" placeholder=" množství v gramech"/>
+	<form action="spocitej" method="get">	
+	    <input class="custom-select" name="gramy" type="number" placeholder="Množství v gramech"/>
 	  	<button class="tlacitko tlacitko-vetsi" name="action" value="spocitej" type="submit">Výpočet</button>
 	  	<textarea class="custom-select seznamVypoctu"  name="comment" form="usrform" placeholder=" seznam výpočtů">seznam výpočtů :</textarea>
 	  	<br>
@@ -63,6 +64,6 @@
 	</form>
 
 
-
+</div>
 </body>
 </html>

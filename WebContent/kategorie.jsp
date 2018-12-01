@@ -3,7 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -20,18 +20,17 @@
 		<%
 			ArrayList<Kategorie> vyfiltrovaneKategorie = (ArrayList<Kategorie>) request.getAttribute("vyfiltrovaneKategorie");
 		%>
-	
-			<%
-				if (vyfiltrovaneKategorie != null) {
-					for (Kategorie jednaKategorie : vyfiltrovaneKategorie) {
-			%>
-			<button class="tlacitko tlacitko-vetsi" name="action" value="<%=jednaKategorie.getIdKategorie()%>"><%=jednaKategorie.getNazev()%>
-			</button>
 
-			<%
-				}
-				}
-			%>
-			</form>
+		<%
+			if (vyfiltrovaneKategorie != null) {
+				for (Kategorie jednaKategorie : vyfiltrovaneKategorie) {
+		%>
+			<a class="tlacitko tlacitko-vetsi" href="kalkulace?idMesta=<%=idMesta%>&idKategorie=<%=jednaKategorie.getIdKategorie()%>" ><%=jednaKategorie.getNazev()%></a>
+		
+		<%
+			}
+			}
+		%>
+	</form>
 </body>
 </html>
