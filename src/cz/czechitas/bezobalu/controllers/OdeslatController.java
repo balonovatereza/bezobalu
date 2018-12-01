@@ -1,55 +1,69 @@
 package cz.czechitas.bezobalu.controllers;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Properties;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.sendgrid.Content;
+import com.sendgrid.Email;
+import com.sendgrid.Mail;
+import com.sendgrid.Method;
+import com.sendgrid.Request;
+import com.sendgrid.Response;
+import com.sendgrid.SendGrid;
 
 public class OdeslatController {
-	
+
 	public void handle(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("tento controller je OdeslatController");
-		/*Properties props = new Properties();
+
+		String novyEmail = "";
+
+		if ((request == null) || (request.getParameter("email") == null)) {
+			novyEmail = "elichnovska@gmail.com";
+		} else {
+			novyEmail = request.getParameter("email");
+		}
+
+		String tabulka = "<html><body><ul>";
+		//String tabulka = "";
+		HttpSession session = request.getSession();
+		ArrayList<String> seznamVypoctu = (ArrayList<String>) session.getAttribute("seznamVypoctu");
+
+		if (seznamVypoctu != null) {
+			for (String radek : seznamVypoctu) {
+				tabulka =tabulka + "<li>"+ radek+ "</li>";
+				//tabulka = tabulka+radek+"%n";
+			}
+		}
+		tabulka=tabulka+"<ul></body></html>";
 		
-		final String username = "bezobalu25@gmail.com";
-        final String password = "Tankt3434";
 
-        
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
-        props.put("mail.imaps.ssl.trust", "*");
-        props.put("mail.debug", "true");
+		Email from = new Email("bezobalu25@gmail.com");
+		String subject = "Váš nákupní seznam do BezObalu";
+		Email to = new Email(novyEmail);
+		Content content = new Content("text/html", tabulka);
+		Mail mail = new Mail(from, subject, to, content);
 
-        Session session = Session.getInstance(props,
-          new javax.mail.Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, password);
-            }
-          });
+		SendGrid sg = new SendGrid("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");
+		Request req = new Request();
+		try {
+			req.setMethod(Method.POST);
+			req.setEndpoint("mail/send");
+			req.setBody(mail.build());
+			Response res = sg.api(req);
+			System.out.println(res.getStatusCode());
+			System.out.println(res.getBody());
+			System.out.println(res.getHeaders());
+		} catch (IOException ex) {
+			System.out.print("adad");
+		}
+		
 
-        try {
-
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("bezobalu25@gmail.com"));
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress("elichnovska@gmail.com"));
-            message.setSubject("A testing mail header !!!");
-            message.setText("Dear Mail Crawler");
-
-            Transport.send(message);
-
-            System.out.println("Done");
-
-        } catch (MessagingException e) {
-            throw new RuntimeException(e);
-        }*/
 
 	}
 }
