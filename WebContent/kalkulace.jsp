@@ -25,9 +25,6 @@
 <%@ include file="header.jsp"%>
 <div class="container md">
 	
-	<form action="kalkulace" method="get">
-	<br>
-	<br>
 	Název vybrané kategorie :
 	
 		<%	
@@ -53,18 +50,6 @@
 				}
 			%>
 	--%>
-	
-
-	<button class="tlacitko tlacitko-kalkulace" name="action" value="vyfiltrujProdukty" type="submit">Vyber
-
-			produkt</button>
-	--%>
-	</form>
-	
-	
-	<br>
-	<br>
-
 
 	<form action="kalkulace" method="get">
 		<select class="custom-select" name="idProduktu">
@@ -110,9 +95,7 @@
                 </ul>
 	</form>
 	<br>
-	<br>
-	 
-	
+
 	<form action="kalkulace" method="post">
 		<input class="custom-select" name="email" type="email" placeholder=" muj@email.cz"/>
 		<button class="tlacitko tlacitko-kalkulace" name="action" value="odeslat" type="submit">Odešli na email</button>
