@@ -15,7 +15,7 @@ public class FiltrPController {
 		int idMesta=0;
 		int idKategorie=0;
 		
-		if ((request == null) || (request.getParameter("idMesta") == null)) {
+		if ((request == null) || (request.getParameter("idMesta") == null)|| (request.getParameter("idMesta").equals(""))) {
 			idMesta = 1;
 		} else {
 			idMesta = Integer.parseInt(request.getParameter("idMesta"));
