@@ -2,50 +2,53 @@ package cz.czechitas.bezobalu.controllers;
 
 import java.util.Properties;
 
-
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class OdeslatController {
 	public void handle(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("tento controller je OdeslatController");
-		  /* 
-			      // Recipient's email ID needs to be mentioned.
-			      String to = "elichnovska@gmail.com";
+		
+		final String username = "bezobalu25";
+        final String password = "Tankt3434";
 
-			      // Sender's email ID needs to be mentioned
-			      String from = "bezobalu25@gmail.com";
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
 
-			      // Assuming you are sending email from localhost
-			      String host = "localhost";
+        Session session = Session.getInstance(props,
+          new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);
+            }
+          });
 
-			      // Get system properties
-			      Properties properties = System.getProperties();
+        try {
 
-			      // Setup mail server
-			      properties.setProperty("smtp.google.com", host);
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress("bezobalu25@gmail.com"));
+            message.setRecipients(Message.RecipientType.TO,
+                InternetAddress.parse("elichnovska@gmail.com"));
+            message.setSubject("A testing mail header !!!");
+            message.setText("Dear Mail Crawler,"
+                + "\n\n No spam to my email, please!");
 
-			      // Get the default Session object.
-			      Session session = Session.getDefaultInstance(properties);
+            Transport.send(message);
 
-			      try {
-			         // Create a default MimeMessage object.
-			         MimeMessage message = new MimeMessage(session);
-			         // Set From: header field of the header.
-			         message.setFrom(new InternetAddress(from));
-			         // Set To: header field of the header.
-			         message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-			         // Set Subject: header field
-			         message.setSubject("This is the Subject Line!");
-			         // Now set the actual message
-			         message.setText("This is actual message");
-			         // Send message
-			         Transport.send(message);
-			         System.out.println("Sent message successfully....");
-			      } catch (MessagingException mex) {
-			         mex.printStackTrace();
-			      }*/
-			   }
-			}
+            System.out.println("Done");
 
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
 
+	}
+}
