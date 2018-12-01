@@ -25,12 +25,12 @@ public class KalkulaceServlet extends HttpServlet {
 	private ZobrazKController zobrazKController = new ZobrazKController();
 	private SpocitejController spocitejController = new SpocitejController();
 	private OdeslatController odeslatController = new OdeslatController();
-	
-	
-	
+
+
+
 	@Override
     public void init(ServletConfig config) throws ServletException {
-		
+
         super.init(config);
     }
 
@@ -38,20 +38,20 @@ public class KalkulaceServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		String action = request.getParameter("action");
-		
-		if (action == null) {
-			zobrazKController.zobrazKategorii(request, response); //zobrazi zvolenou kategorii do nadpisu
-			filtrPController.handle(request, response); //vraci ArrayList produktu do dropdown listu
-			
-		} else if (action.equals("spocitej")) {
-			spocitejController.handle(request, response); //vraci jeden aktualni vypocet
-			spocitejController.vypis(request, response); //vraci seznam vypoctu aktualizovany o aktualni vypocet
-		} else if (action.equals("odeslat")) {
-			 odeslatController.handle(request, response);
-		}
-		
+		zobrazKController.zobrazKategorii(request, response); //zobrazi zvolenou kategorii do nadpisu
+		filtrPController.handle(request, response); //vraci ArrayList produktu do dropdown listu
+        if (action != null){
+            if (action.equals("spocitej")) {
+                spocitejController.handle(request, response); //vraci jeden aktualni vypocet
+                spocitejController.vypis(request, response); //vraci seznam vypoctu aktualizovany o aktualni vypocet
+            } else if (action.equals("odeslat")) {
+                odeslatController.handle(request, response);
+            }
+        }
+
+
 		getServletConfig().getServletContext().getRequestDispatcher("/kalkulace.jsp").forward(request, response);
 	}
 

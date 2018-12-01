@@ -13,29 +13,28 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<section id="container">
-		<%@ include file="header.jsp"%>
 
-		<form class="form" action="kalkulace" method="get">
-			<%
-				ArrayList<Kategorie> vyfiltrovaneKategorie = (ArrayList<Kategorie>) request
-						.getAttribute("vyfiltrovaneKategorie");
+<section id="container">
+<%@ include file="header.jsp"%>
+<form class="form" action="kalkulace" method="get">
+		<%
+			ArrayList<Kategorie> vyfiltrovaneKategorie = (ArrayList<Kategorie>) request
+					.getAttribute("vyfiltrovaneKategorie");
+			
+		int idMesta = Integer.parseInt(request.getParameter("idMesta"));//to si nacte z linku
+		%>
 
-				int idMesta = Integer.parseInt(request.getParameter("idMesta"));
-			%>
+		<%
+			if (vyfiltrovaneKategorie != null) {
+				for (Kategorie jednaKategorie : vyfiltrovaneKategorie) {
+		%>
+			<a class="tlacitko tlacitko-kategorie" href="kalkulace?idMesta=<%=idMesta%>&idKategorie=<%=jednaKategorie.getIdKategorie()%>" ><%=jednaKategorie.getNazev()%></a>
+		
+		<%
+			}
+			}
+		%>
 
-			<%
-				if (vyfiltrovaneKategorie != null) {
-					for (Kategorie jednaKategorie : vyfiltrovaneKategorie) {
-			%>
-			<div class="kategorieContainer">
-				<a class="tlacitko tlacitko-kategorie"
-					href="kalkulace?idMesta=<%=idMesta%>&idKategorie=<%=jednaKategorie.getIdKategorie()%>"><%=jednaKategorie.getNazev()%></a>
-			</div>
-			<%
-				}
-				}
-			%>
 		</form>
 	</section>
 
