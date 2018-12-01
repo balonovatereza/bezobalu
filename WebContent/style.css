@@ -89,6 +89,10 @@ h1 {
     width: 450px;
 }
 
+.tlacitko-vetsi-vybrana-kat {
+	top: 30px;
+}
+
 .tlacitko-nejvetsi {
 	padding: 40px 70px;
 	font-size: 40px;
@@ -129,9 +133,16 @@ h1 {
 	background-color: #3e8e41;
 }
 
+.custom-select .seznamVypoctu {
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    box-sizing:content-box;
+    -webkit-box-sizing:content-box; 
+}
+
 .custom-select {
 	font-family: 'Space Mono', monospace;
-	font-size: 25px;
+	font-size: 20px;
 	top: 0px;
 	right: auto;
 	width: 300px;
@@ -153,4 +164,10 @@ input, select, textarea{
 .mainContainer {
 	width:50%;
 	margin:auto;
+}
+.seznamVypoctu {
+	top: 38px;
+    align-content:left;
+    /*text-align:left;*/
+    resize: vertical;
 }

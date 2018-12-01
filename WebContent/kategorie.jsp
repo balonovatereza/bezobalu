@@ -18,10 +18,7 @@
 
 	<form action="kalkulace" method="get">
 		<%
-			ArrayList<Kategorie> vyfiltrovaneKategorie = (ArrayList<Kategorie>) request
-					.getAttribute("vyfiltrovaneKategorie");
-			ArrayList<Produkt> vyfiltrovaneProdukty = (ArrayList<Produkt>) request.getAttribute("vyfiltrovaneProdukty");
-			int idMesta = Integer.parseInt(request.getParameter("idMesta"));
+			ArrayList<Kategorie> vyfiltrovaneKategorie = (ArrayList<Kategorie>) request.getAttribute("vyfiltrovaneKategorie");
 		%>
 
 		<%
