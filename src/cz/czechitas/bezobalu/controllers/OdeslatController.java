@@ -23,7 +23,7 @@ public class OdeslatController {
 
 		String novyEmail = "";
 
-		if ((request == null) || (request.getParameter("email") == null)) {
+		if ((request == null) || (request.getParameter("email") == null)|| (request.getParameter("email").equals(""))) {
 			novyEmail = "elichnovska@gmail.com";
 		} else {
 			novyEmail = request.getParameter("email");
