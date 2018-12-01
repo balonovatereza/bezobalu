@@ -19,7 +19,6 @@
 	<form action="kalkulace" method="get">
 		<%
 			ArrayList<Kategorie> vyfiltrovaneKategorie = (ArrayList<Kategorie>) request.getAttribute("vyfiltrovaneKategorie");
-			ArrayList<Produkt> vyfiltrovaneProdukty = (ArrayList<Produkt>) request.getAttribute("vyfiltrovaneProdukty");
 		%>
 	
 			<%

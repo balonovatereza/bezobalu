@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BezObalu -vyber město </title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
   </head>
   <body>
-    <% response.sendRedirect("/vyberMesta"); %>
+  
+    <jsp:forward page="vyberMesta"></jsp:forward>
   </body>
 </html>
