@@ -41,8 +41,7 @@
 				50% tvořena právě obalem
 			</li>
 			
-			<li>Můžete si vybrat mezi prodejnami v <strong>Ostravě</strong>
-				a <strong>Olomouci</strong></li>
+			<li>Můžete si vybrat mezi prodejnami:</li>
 		</ul>
 	</div>
 	<br>
