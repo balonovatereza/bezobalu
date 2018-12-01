@@ -21,31 +21,34 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<section id="container">
-		<%@ include file="header.jsp"%>
-		<div>
-			<ul>
-				<li>Hlavní myšlenka obchodu <strong>BezObalu</strong> je
-					snížení zátěže přírody nadbytečnými plastovými obaly
-				</li>
 
-				<li>Aplikace slouží k rychlému porovnání cen zboží z <strong>BezObalu</strong>
-					s cenou zboží z konvenčních obchodů, kde se prodává zabalené v
-					různých gramážích
-				</li>
-
-				<li>Cena sortimentu <strong>BezObalu</strong> vychází ve
-					srovnání s cenou u maloobchodníků výhodněji (pokud srovnáváme
-					podobnou kvalitu surovin), protože často je cena produktu z 20 až
-					50% tvořena právě obalem
-				</li>
-
-				<li>Můžete si vybrat mezi prodejnami:</li>
-			</ul>
-		</div>
-		<br> <br>
-		<div class="mujdiv">
-			<%
+<section id="container">
+<%@ include file="header.jsp"%>
+	<div>
+		<ul>
+			<li>Hlavní myšlenka
+					obchodu <strong>BezObalu</strong> je snížení zátěže přírody
+					nadbytečnými plastovými obaly</li>
+			
+			<li>Aplikace slouží k rychlému porovnání cen zboží z <strong>BezObalu</strong>
+				s cenou zboží z konvenčních obchodů, kde se prodává zabalené v
+				různých gramážích
+			</li>
+			
+			<li>Cena sortimentu <strong>BezObalu</strong> vychází ve
+				srovnání s cenou u maloobchodníků výhodněji (pokud srovnáváme
+				podobnou kvalitu surovin), protože často je cena produktu z 20 až
+				50% tvořena právě obalem
+			</li>
+			
+			<li>Můžete si vybrat mezi prodejnami v <strong>Ostravě</strong>
+				a <strong>Olomouci</strong></li>
+		</ul>
+	</div>
+	<br>
+	<br>
+	<div class="divTownPicker">
+		<%
 				ArrayList<Mesto> vsechnaMesta = (ArrayList<Mesto>) request.getAttribute("vsechnaMesta");
 				int idMesta = 0;//to si nacte z linku
 			%>
@@ -54,22 +57,15 @@
 				if (vsechnaMesta != null) {
 					for (Mesto jednoMesto : vsechnaMesta) {
 			%>
-			<a class="tlacitko tlacitko-vetsi"
+			<a class="tlacitko tlacitko-mesto"
 				href="kategorie?idMesta=<%=jednoMesto.getIdMesta()%>"><%=jednoMesto.getNazev()%></a>
 
 			<%
 				}
 				}
 			%>
+	</div>
 
-
-
-
-
-
-		</div>
-
-		<div></div>
 	</section>
 </body>
 </html>

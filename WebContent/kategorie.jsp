@@ -13,9 +13,10 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <section id="container">
 <%@ include file="header.jsp"%>
-<form action="kalkulace" method="get">
+<form class="form" action="kalkulace" method="get">
 		<%
 			ArrayList<Kategorie> vyfiltrovaneKategorie = (ArrayList<Kategorie>) request
 					.getAttribute("vyfiltrovaneKategorie");
@@ -27,14 +28,15 @@
 			if (vyfiltrovaneKategorie != null) {
 				for (Kategorie jednaKategorie : vyfiltrovaneKategorie) {
 		%>
-			<a class="tlacitko tlacitko-vetsi" href="kalkulace?idMesta=<%=idMesta%>&idKategorie=<%=jednaKategorie.getIdKategorie()%>" ><%=jednaKategorie.getNazev()%></a>
+			<a class="tlacitko tlacitko-kategorie" href="kalkulace?idMesta=<%=idMesta%>&idKategorie=<%=jednaKategorie.getIdKategorie()%>" ><%=jednaKategorie.getNazev()%></a>
 		
 		<%
 			}
 			}
 		%>
+
 		</form>
 	</section>
-	
+
 </body>
 </html>
