@@ -12,10 +12,21 @@ public class FiltrPController {
 
 	public void handle(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("tento controller je FiltrPController");
-		// mesto uz bylo osetreno v predchozim kontrolu FiltrK a pokud neni zadane, je jednicka, nemuze nastat null
-		int idMesta = Integer.parseInt(request.getParameter("idMesta"));
-		// kategorie je osetrena uz v predchozi kontroleru ZobrazK a pokud neni zadana, je jednicka nemuze nastat null
-		int idKategorie = Integer.parseInt(request.getParameter("idKategorie"));
+		int idMesta=0;
+		int idKategorie=0;
+		
+		if ((request == null) || (request.getParameter("idMesta") == null)) {
+			idMesta = 1;
+		} else {
+			idMesta = Integer.parseInt(request.getParameter("idMesta"));
+		}
+		
+		if ((request == null) || (request.getParameter("idKategorie") == null)) {
+			idKategorie = 1;
+		} else {
+			idKategorie = Integer.parseInt(request.getParameter("idKategorie"));
+		}
+		
 		request.setAttribute("vyfiltrovaneProdukty", jdbcDao.vyfiltrujProdukty(idMesta, idKategorie));
 	}
 
