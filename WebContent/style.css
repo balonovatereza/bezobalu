@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
 
+
 body {
 	background-color: #FBFAF8;
 	font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -22,14 +23,7 @@ html {
 	height: 100%;
 }
 
-h1 {
-	font-family: 'Space Mono', monospace;
-	font-size: 60px;
-	font-weight: bold;
-	text-align: center;
-}
-
-.mujdiv {
+.divTownPicker {
 	width: 100%;
 	text-align: center;
 }
@@ -42,55 +36,51 @@ h1 {
 	padding: 15px 25px;
 }
 
-.tlacitkoVyberMesta {
-	padding: 60px 90px;
-}
-
 .tlacitko {
-	/*background-color: rgba(95, 67, 14) ;*/
 	background-color: #85ab57;
 	color: white;
 	text-align: center;
 	text-decoration: none;
 	border-radius: 5px;
-	display: inline-block;
-	font-family: "Source Sans Pro", sans-serif;
-	font-size: 30px;
+	
 	margin: 8px 15px;
 	cursor: pointer;
 	font-weight: bold;
-	
 }
 
 .tlacitko:hover {
-	/*background-color: #261e0f;*/
 	background-color: #749c43;
 	color: white;
 }
 
-/*button:hover, .tlacitko:hover {
-  background-color: #261e0f;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-*/
-.tlacitko-vetsi {
-	padding: 10px 0;
+.tlacitko-kategorie {
+	padding: 3px 3px 3px 3px;
     width: 450px;
-}
-.tlacitko-vetsi-vybrana-kat {
-	top: 30px;
+    font-size: 30px;
 }
 
-.tlacitko-nejvetsi {
-	padding: 15px 0px;
+.tlacitko-mesto {
+padding: 15px 15px 15px 15px;
 	width: 180px;
+	font-size: 30px;
 }
-
-.tlacitkoGramy{
-	 height: 80px;
-     width: 110px;
-     padding: 5px;
+.tlacitko-kalkulace {
+    font-size: 17px;
+    padding: 10px;
+}
+.tlacitkoGramy {
+    height: 50px;
+    width: 100px;
+    padding: 0px;
+}
+.kategorieContainer {
+	display: flex;
+	flex-direction: row;
+	
+}
+.form {
+	style="display: block;
+    margin-top: 0em;"
 }
 
 .dropdown-content {
@@ -122,22 +112,14 @@ h1 {
 	background-color: #3e8e41;
 }
 
-.custom-select .seznamVypoctu {
-    -ms-box-sizing:content-box;
-    -moz-box-sizing:content-box;
-    box-sizing:content-box;
-    -webkit-box-sizing:content-box; 
-}
-
 .custom-select {
-	font-family: 'Space Mono', monospace;
 	font-size: 20px;
 	top: 0px;
 	right: auto;
 	width: 300px;
 	height: 70px;
 	position: relative;
-	border: 3px solid #261e0f;
+	border: 1px solid #f3f2ef;
 	border-radius: 5px;
 	margin: 8px 15px;
 }
@@ -158,7 +140,7 @@ input, select, textarea{
 .logoContainer {
 	display: inline-block;
 	width: 100%;
-	height: 220px;
+	height: 200px;
 
 	
 }
@@ -167,9 +149,11 @@ input, select, textarea{
     margin-right: auto;
     width: 200px;
 }
-
+.left {
+	width: 50px;
+}
 .motto {
-    font-family: 'Vollkorn', serif;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
     text-align: center;
     padding-bottom: 30px;

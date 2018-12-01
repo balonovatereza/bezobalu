@@ -54,8 +54,9 @@
 			%>
 	--%>
 	
-	<%--
-	<button class="tlacitko tlacitko-vetsi" name="action" value="vyfiltrujProdukty" type="submit">Vyber
+
+	<button class="tlacitko tlacitko-kalkulace" name="action" value="vyfiltrujProdukty" type="submit">Vyber
+
 			produkt</button>
 	--%>
 	</form>
@@ -63,6 +64,7 @@
 	
 	<br>
 	<br>
+
 
 	<form action="kalkulace" method="get">
 		<select class="custom-select" name="idProduktu">
@@ -79,8 +81,9 @@
 	    <input id="gramy" class="custom-select" name="gramy" type="number" placeholder="Množství v gramech"/>
         <input type="hidden" name="idMesta" value="<%=request.getParameter("idMesta")%>">
         <input type="hidden" name="idKategorie" value="<%=request.getParameter("idKategorie")%>">
-	  	<button class="tlacitko tlacitko-vetsi" name="action" value="spocitej" type="submit">Výpočet</button>
+	  	<button class="tlacitko tlacitko-kalkulace" name="action" value="spocitej" type="submit">Výpočet</button>
 	  	<textarea class="custom-select seznamVypoctu"  name="comment" form="usrform" placeholder=" seznam výpočtů">výpočet :</textarea>
+
 	  	<br>
 		<button class="tlacitko tlacitkoGramy" type="button" onclick="document.getElementById('gramy').value = parseInt(document.getElementById('gramy').value) + 12 ">12g</button>
         <button class="tlacitko tlacitkoGramy" type="button" onclick="document.getElementById('gramy').value =parseInt(document.getElementById('gramy').value) + 250 ">250g</button>
@@ -112,7 +115,7 @@
 	
 	<form action="kalkulace" method="post">
 		<input class="custom-select" name="email" type="email" placeholder=" muj@email.cz"/>
-		<button class="tlacitko tlacitko-vetsi" name="action" value="odeslat" type="submit">Odešli na email</button>
+		<button class="tlacitko tlacitko-kalkulace" name="action" value="odeslat" type="submit">Odešli na email</button>
 	</form>
 
 
