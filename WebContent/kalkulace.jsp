@@ -96,7 +96,6 @@
 
 		</ul>
 		<br>
-
 		<form action="kalkulace" method="post">
 			<input class="custom-select" name="email" type="email"
 				placeholder=" muj@email.cz" />
