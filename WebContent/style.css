@@ -83,6 +83,10 @@ html {
 	background-color: #7d7162;
 }
 
+.tlacitkoGramy:hover {
+	background-color: #675a48;
+}
+
 .kategorieContainer {
 	display: flex;
 	flex-direction: row;
@@ -224,7 +228,6 @@ li:before {
 #gramy {
 	width: 100px;
 	min-width: 100px;
-	
 }
 
 #zpet {
@@ -238,6 +241,9 @@ li:before {
 	min-width: 60px;
 	background-color: #7d7162;
 }
+#zpet:hover {
+	background-color: #675a48;
+}
 
 .nazevKategorie {
 	margin: 1% 1%;
@@ -250,7 +256,5 @@ li:before {
 }
 
 .vypocet {
-	margin-top: 15px;
-	margin-bottom: 15px;
-	margin: 0% 1%;
+	margin: 15px 1% 15px 1%;
 }
