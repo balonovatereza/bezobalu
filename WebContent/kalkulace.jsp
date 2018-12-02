@@ -61,23 +61,23 @@
 			<%--<textarea class="custom-select seznamVypoctu"  name="comment" form="usrform" placeholder=" seznam výpočtů">výpočet :</textarea> --%>
 
 			<div>
-			<button class="tlacitko tlacitkoGramy" type="button"
-				onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 50  ">50g</button>
-			<button class="tlacitko tlacitkoGramy" type="button"
-				onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 100  ">100g</button>
-			<button class="tlacitko tlacitkoGramy" type="button"
-				onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 200  ">200g</button>
-			<button class="tlacitko tlacitkoGramy" type="button"
-				onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 250  ">250g</button>
-			<button class="tlacitko tlacitkoGramy" type="button"
-				onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 500  ">500g</button>
-		</div>
+				<button class="tlacitko tlacitkoGramy" type="button"
+					onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 50  ">50g</button>
+				<button class="tlacitko tlacitkoGramy" type="button"
+					onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 100  ">100g</button>
+				<button class="tlacitko tlacitkoGramy" type="button"
+					onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 200  ">200g</button>
+				<button class="tlacitko tlacitkoGramy" type="button"
+					onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 250  ">250g</button>
+				<button class="tlacitko tlacitkoGramy" type="button"
+					onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 500  ">500g</button>
+			</div>
 		</form>
-
-		<strong> Výsledná cena: <%
+		<div class="vypocet"> <strong> Výsledná cena: <%
  	out.print(request.getAttribute("vypocet"));
  %> Kč
 		</strong>
+		</div>
 		<%
 			ArrayList<String> seznamVypoctu = (ArrayList<String>) request.getSession().getAttribute("seznamVypoctu");
 
