@@ -15,7 +15,7 @@
 <body>
 
 <section id="container">
-<%@ include file="header.jsp"%>
+<%@ include file="header2.jsp"%>
 <form class="form" action="kalkulace" method="get">
 		<%
 			ArrayList<Kategorie> vyfiltrovaneKategorie = (ArrayList<Kategorie>) request

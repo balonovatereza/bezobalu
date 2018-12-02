@@ -25,17 +25,20 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<section id="container">
-		<%@ include file="header.jsp"%>
-		<br> <a class="tlacitko tlacitko-kalkulace"
-			href="kategorie?idMesta=<%=request.getParameter("idMesta")%>">Zpátky
-			na kategorie</a> <br> Název vybrané kategorie :
+	<div id="container">
+		<%@ include file="header2.jsp"%>
 
-		<%
- 	ArrayList<Produkt> vyfiltrovaneProdukty = (ArrayList<Produkt>) request.getAttribute("vyfiltrovaneProdukty");
- 	Kategorie nazevKategorie = (Kategorie) request.getAttribute("zobrazKategorii");
- 	out.print(nazevKategorie.getNazev());
- %>
+
+		<a id="zpet" class="tlacitko tlacitko-kalkulace"
+			href="kategorie?idMesta=<%=request.getParameter("idMesta")%>"><i
+			class="fas fa-arrow-circle-left"> </i></a>
+		<div class="nazevKategorie">
+			<%
+				ArrayList<Produkt> vyfiltrovaneProdukty = (ArrayList<Produkt>) request.getAttribute("vyfiltrovaneProdukty");
+				Kategorie nazevKategorie = (Kategorie) request.getAttribute("zobrazKategorii");
+				out.print(nazevKategorie.getNazev());
+			%>
+		</div>
 
 		<form action="kalkulace" method="get">
 			<select class="custom-select" name="idProduktu">
@@ -57,7 +60,7 @@
 				value="spocitej" type="submit">Spočítej</button>
 			<%--<textarea class="custom-select seznamVypoctu"  name="comment" form="usrform" placeholder=" seznam výpočtů">výpočet :</textarea> --%>
 
-			<br>
+			<div>
 			<button class="tlacitko tlacitkoGramy" type="button"
 				onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 50  ">50g</button>
 			<button class="tlacitko tlacitkoGramy" type="button"
@@ -68,13 +71,13 @@
 				onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 250  ">250g</button>
 			<button class="tlacitko tlacitkoGramy" type="button"
 				onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 500  ">500g</button>
+		</div>
 		</form>
 
-		<br>
-		<strong> Výsledná cena : <%
-			out.print(request.getAttribute("vypocet"));
-		%> Kč
-		</strong><br> <br>
+		<strong> Výsledná cena: <%
+ 	out.print(request.getAttribute("vypocet"));
+ %> Kč
+		</strong>
 		<%
 			ArrayList<String> seznamVypoctu = (ArrayList<String>) request.getSession().getAttribute("seznamVypoctu");
 
@@ -102,6 +105,6 @@
 			<button class="tlacitko tlacitko-kalkulace" name="action"
 				value="odeslat" type="submit">Odešli</button>
 		</form>
-	</section>
+	</div>
 </body>
 </html>

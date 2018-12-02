@@ -13,6 +13,6 @@
 </div>
 </div>
 
-<p class="motto">spočítej si kolik ušetříš nákupem bezObalu </p>
+<p class="motto">spočítej si, kolik ušetříš nákupem bezObalu </p>
 </body>
 </html>
