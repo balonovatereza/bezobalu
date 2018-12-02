@@ -70,6 +70,7 @@ html {
 	height: 50px;
 	min-width: 90px;
 	float: right;
+	background-color: #85ab57;
 }
 
 .tlacitkoGramy {
@@ -79,6 +80,7 @@ html {
 	margin: 1% 1%;
 	min-width: 50px;
 	max-width: 150px;
+	background-color: #7d7162;
 }
 
 .kategorieContainer {
@@ -234,6 +236,7 @@ li:before {
 	font-size: 34px;
 	border-radius: 54%;
 	min-width: 60px;
+	background-color: #7d7162;
 }
 
 .nazevKategorie {
@@ -249,4 +252,5 @@ li:before {
 .vypocet {
 	margin-top: 15px;
 	margin-bottom: 15px;
+	margin: 0% 1%;
 }
