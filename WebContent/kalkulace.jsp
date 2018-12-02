@@ -73,10 +73,11 @@
 					onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 500  ">500g</button>
 			</div>
 		</form>
-		<div class="vypocet"> <strong> Výsledná cena: <%
- 	out.print(request.getAttribute("vypocet"));
- %> Kč
-		</strong>
+		<div class="vypocet">
+			<strong> Výsledná cena: <%
+			out.print(request.getAttribute("vypocet") == null ? 0 : request.getAttribute("vypocet"));
+			%> Kč
+			</strong>
 		</div>
 		<%
 			ArrayList<String> seznamVypoctu = (ArrayList<String>) request.getSession().getAttribute("seznamVypoctu");
@@ -101,7 +102,10 @@
 		<br>
 		<form action="kalkulace" method="post">
 			<input class="custom-select" name="email" type="email"
-				placeholder=" muj@email.cz" />
+				placeholder=" muj@email.cz" /> <input type="hidden" name="idMesta"
+				value="<%=request.getParameter("idMesta")%>"> <input
+				type="hidden" name="idKategorie"
+				value="<%=request.getParameter("idKategorie")%>">
 			<button class="tlacitko tlacitko-kalkulace" name="action"
 				value="odeslat" type="submit">Odešli</button>
 		</form>
