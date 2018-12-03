@@ -56,7 +56,7 @@
 				 <% if (OtoceneIdMesta == (max-1)) {
  						out.print(" a ");
  						} else if (OtoceneIdMesta == max) {
- 						out.print(".");
+ 						out.print(" ");
  						} else {
  						out.print(" , ");
  			}
