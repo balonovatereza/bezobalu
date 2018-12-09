@@ -62,15 +62,15 @@
 
 			<div>
 				<button class="tlacitko tlacitkoGramy" type="button"
-					onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 50  ">50g</button>
+					onclick="document.getElementById('gramy').value = 50 ">50g</button>
 				<button class="tlacitko tlacitkoGramy" type="button"
-					onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 100  ">100g</button>
+					onclick="document.getElementById('gramy').value = 150">150g</button>
 				<button class="tlacitko tlacitkoGramy" type="button"
-					onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 200  ">200g</button>
+					onclick="document.getElementById('gramy').value = 200">200g</button>
 				<button class="tlacitko tlacitkoGramy" type="button"
-					onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 250  ">250g</button>
+					onclick="document.getElementById('gramy').value = 250">250g</button>
 				<button class="tlacitko tlacitkoGramy" type="button"
-					onclick="document.getElementById('gramy').value =(document.getElementById('gramy').value.length > 0 ? parseInt(document.getElementById('gramy').value) : 0) + 500  ">500g</button>
+					onclick="document.getElementById('gramy').value = 500">500g</button>
 			</div>
 		</form>
 		<div class="vypocet">

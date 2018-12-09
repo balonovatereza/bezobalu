@@ -41,27 +41,25 @@
 					50% tvořena právě obalem
 				</li>
 
-				<li>Můžete si vybrat mezi prodejnami  <%
+				<li>Můžete si vybrat mezi prodejnami
+					<%
 					ArrayList<Mesto> vsechnaMesta = (ArrayList<Mesto>) request.getAttribute("vsechnaMesta");
-					int max = vsechnaMesta.size();
-					int idMesta = 0;//to si nacte z linku
-
-					if (vsechnaMesta != null) {
-
-						for (Mesto jednoMesto : vsechnaMesta) {
-							int IdMesta = jednoMesto.getIdMesta();
-							int OtoceneIdMesta = max - IdMesta + 1;
-				%> 
-				<%=jednoMesto.getNazev()%>
-				 <% if (OtoceneIdMesta == (max-1)) {
- 						out.print(" a ");
- 						} else if (OtoceneIdMesta == max) {
- 						out.print(" ");
- 						} else {
- 						out.print(" , ");
+							int max = vsechnaMesta.size();
+							int count = 0;
+							if (vsechnaMesta != null) {
+								for (Mesto jednoMesto : vsechnaMesta) {
+									count=count+1;
+				%> <%=jednoMesto.getNazev()%> <%
+ 	if (count<(max-1)) {
+ 				out.print(", ");
+ 			} else if (count==(max-1)) {
+ 				out.print(" a ");
+ 			} else {
+ 				out.print("");
  			}
+ 		}
  	}
- 	} %>
+ %>
 				</li>
 			</ul>
 		</div>

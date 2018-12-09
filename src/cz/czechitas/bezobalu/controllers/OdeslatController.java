@@ -49,7 +49,7 @@ public class OdeslatController {
 		Content content = new Content("text/html", tabulka);
 		Mail mail = new Mail(from, subject, to, content);
 
-		SendGrid sg = new SendGrid("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");
+		SendGrid sg = new SendGrid("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");
 		Request req = new Request();
 		try {
 			req.setMethod(Method.POST);
@@ -63,7 +63,7 @@ public class OdeslatController {
 			System.out.print("adad");
 		}
 		
-
+		seznamVypoctu.clear();
 
 	}
 }
